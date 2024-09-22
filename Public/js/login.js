@@ -8,38 +8,37 @@ const fullnameInp = document.getElementById("fullname");
 const loginBtn = document.querySelector(".loginBtn");
 const signupBtn = document.querySelector(".signupBtn");
 
+const loginBtnShow = document.getElementById("login");
+const signupBtnShow = document.getElementById("signup");
 
-const loginBtnShow = document.getElementById('login');
-const signupBtnShow = document.getElementById('signup');
-
-loginBtnShow.addEventListener('click', (e) => {
-	let parent = e.target.parentNode.parentNode;
-	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
-		if(element !== "slide-up") {
-			parent.classList.add('slide-up')
-		}else{
-			loginBtnShow.parentNode.classList.add('slide-up')
-			parent.classList.remove('slide-up')
-		}
-	});
+loginBtnShow.addEventListener("click", (e) => {
+  let parent = e.target.parentNode.parentNode;
+  Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+    if (element !== "slide-up") {
+      parent.classList.add("slide-up");
+    } else {
+      loginBtnShow.parentNode.classList.add("slide-up");
+      parent.classList.remove("slide-up");
+    }
+  });
 });
 
-signupBtnShow.addEventListener('click', (e) => {
-	let parent = e.target.parentNode;
-	Array.from(e.target.parentNode.classList).find((element) => {
-		if(element !== "slide-up") {
-			parent.classList.add('slide-up')
-		}else{
-			signupBtnShow.parentNode.parentNode.classList.add('slide-up')
-			parent.classList.remove('slide-up')
-		}
-	});
+signupBtnShow.addEventListener("click", (e) => {
+  let parent = e.target.parentNode;
+  Array.from(e.target.parentNode.classList).find((element) => {
+    if (element !== "slide-up") {
+      parent.classList.add("slide-up");
+    } else {
+      signupBtnShow.parentNode.parentNode.classList.add("slide-up");
+      parent.classList.remove("slide-up");
+    }
+  });
 });
 
 loginBtn.addEventListener("click", async () => {
   const email = emailInp.value;
   const password = passwordInp.value;
-  const res = await fetch("http://localhost:8080/auth/login", {
+  const res = await fetch("/auth/login", {
     headers: {
       "Content-type": "application/json",
     },
@@ -49,7 +48,7 @@ loginBtn.addEventListener("click", async () => {
 
   const data = await res.json();
 
-    if (res.ok) {
+  if (res.ok) {
     localStorage.setItem(
       "user-info",
       JSON.stringify({ name: data.fullname, email: data.email })
@@ -74,7 +73,7 @@ signupBtn.addEventListener("click", async (e) => {
 
   console.log(email, pass, fullname, cPass);
 
-  const res = await fetch("http://localhost:8080/auth/register", {
+  const res = await fetch("/auth/register", {
     headers: {
       "Content-type": "application/json",
     },
