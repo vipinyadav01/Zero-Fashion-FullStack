@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/Favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/Favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
     <div class="form-structor">
-        <div class="signup">
-            <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
-            <div class="form-holder">
-                <input type="text" id="fullname" class="input" placeholder="Name" />
-                <input type="email" id="sEmail" class="input" placeholder="Email" />
-                <input type="password" id="pass" class="input" placeholder="Password" />
-                <input type="password" id="cPass" class="input" placeholder="Confirm Password" />
-            </div>
-            <button class="submit-btn signupBtn">Sign up</button>
+      <div class="signup">
+        <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+        <div class="form-holder">
+          <input type="text" id="fullname" class="input" placeholder="Name" />
+          <input type="email" id="sEmail" class="input" placeholder="Email" />
+          <input
+            type="password"
+            id="pass"
+            class="input"
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            id="cPass"
+            class="input"
+            placeholder="Confirm Password"
+          />
         </div>
-        <div class="login slide-up">
-            <div class="center">
-                <h2 class="form-title" id="login"><span>or</span>Log in</h2>
-                <div class="form-holder">
-                    <input type="email" id="email" class="input" placeholder="Email" />
-                    <input type="password" id="password" class="input" placeholder="Password" />
-                </div>
-                <button class="submit-btn loginBtn">Log in</button>
-            </div>
+        <button class="submit-btn signupBtn">Sign up</button>
+      </div>
+      <div class="login slide-up">
+        <div class="center">
+          <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+          <div class="form-holder">
+            <input type="email" id="email" class="input" placeholder="Email" />
+            <input
+              type="password"
+              id="password"
+              class="input"
+              placeholder="Password"
+            />
+          </div>
+          <button class="submit-btn loginBtn">Log in</button>
         </div>
+      </div>
     </div>
     <script src="js/login.js"></script>
-</body>
+  </body>
 </html>
