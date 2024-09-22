@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180"
+      href="./images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="./images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="./images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="./images/Favicon/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERO</title>
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- Add other necessary stylesheets -->
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div class="logo">
+        <img src="images/Favicon/favicon-32x32.png" alt="logo">
+        <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="contact.html">ContactUs</a></li>
+        <li><a href="cart.html" id="cart">Cart</a></li>
+        <li><a href="login.html" id="login" data-link="./login.html">LogOut</a>
+        </li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+    <!-- navbar -->
+
+    <h1 class="main-head-of-color-gold">Explore More!</h1>
+    <center><hr /></center>
+    <div class="merlin-grids1">
+      <a href="index.html"><img src="images/merlin-img/merlin-1.jpg" alt /></a>
+      <img src="images/merlin-img/quote1.png" alt />
+      <a href="index.html"><img src="images/merlin-img/merlin-2.jpg" alt /></a>
+    </div>
+
+    <br /><br />
+
+    <div class="merlin-grids2">
+      <a href="index.html"><img src="images/merlin-img/merlin-5.jpg" alt /></a>
+      <img src="images/merlin-img/quote2.png" alt />
+      <a href="index.html"><img src="images/merlin-img/merlin-6.jpg" alt /></a>
+    </div>
+
+    <br /><br />
+
+    <!-- FOOTER -->
+    <div class="footer-container">
+      <div class="footer-1">
+        <a href="index.html"><h2>ZERO FASHION</h2></a>
+        <br />
+        <p><b>ONLINE SHOPPING</b></p>
+        <h6>
+          Men<br /><br />
+          Women <br /><br />
+          Kids <br /><br />
+          Merline Exclusive<br /><br />
+        </h6>
+      </div>
+
+      <div class="footer-2">
+        <p><b>USEFUL LINKS</b></p>
+        <h6>
+          Contact Us<br /><br />
+          FAQ<br /><br />
+          T&C<br /><br />
+          Blog<br /><br />
+          Privacy Policy<br /><br />
+        </h6>
+      </div>
+
+      <div class="footer-3">
+        <p><b>100% Original</b> guarantee</p>
+        <h6>for all products at ZEROFASHION.com</h6>
+        <p><b>Return within 30days</b> of</p>
+        <h6>receiving you order</h6>
+        <p><b>Get free delivery</b> for every</p>
+        <h6>order above Rs.999</h6>
+        <br /><br />
+      </div>
+    </div>
+    <p class="copy-right"><a href="index.html">Copyright</a>&copy;2024</p>
+    <br />
+    <!-- FOOTER -->
+
+    <script>
+      // Add this script to handle redirection after login
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if the user just logged in (you might need to adjust this logic based on your auth system)
+        const justLoggedIn = sessionStorage.getItem('justLoggedIn');
+        if (justLoggedIn) {
+          // Clear the flag
+          sessionStorage.removeItem('justLoggedIn');
+          // Redirect to Zero.html
+          window.location.href = 'Zero.html';
+        }
+      });
+    </script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

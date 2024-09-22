@@ -1,0 +1,37 @@
+._success {
+  border: 2px solid black;
+  padding: 45px;
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX();
+  -moz-transform: translateY(-50%) translateX();
+  -ms-transform: translateY(-50%) translateX();
+  -o-transform: translateY(-50%) translateX();
+}
+
+._success i {
+  font-size: 55px;
+  color: #28a745;
+}
+
+._success h2 {
+  margin-bottom: 12px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+
+._success p {
+  margin-bottom: 0px;
+  font-size: 18px;
+  color: #495057;
+  font-weight: 500;
+}

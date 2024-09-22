@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/Favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/Favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ZERO FASHION - Contact Us</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* Contact page specific styles */
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f4f4f4;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 500px;
+      }
+
+      .contact-container {
+        position: relative;
+        top: 80px; /* update the top property to be equal to the nav container height */
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 100px;
+        flex: 1;
+      }
+      .contact-form {
+        margin-top: 100px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .form-group textarea {
+        height: 150px;
+      }
+      .form-group button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .form-group button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+      /* Media queries */
+      @media screen and (max-width: 768px) {
+        .contact-form {
+          margin-top: 20px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .contact-form {
+          padding: 20px;
+        }
+        .contact-item {
+          flex-basis: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .contact-item {
+        flex-basis: 48%;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .contact-item i {
+        font-size: 20px;
+        color: #4a4a4a;
+        margin-left: 8px;
+      }
+      .contact-item p {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+        color: #4a4a4a;
+        margin-right: 8px;
+      }
+      .social-links {
+        margin-top: 30px;
+      }
+      .social-links a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 24px;
+        color: #4a4a4a;
+        transition: color 0.3s ease;
+      }
+      .social-links a:hover {
+        color: #007bff;
+      }
+      .slogan {
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+        color: #333;
+        font-size: 36px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      .nav-button {
+        background-color: whitesmoke;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 5px 5px 5px black;
+      }
+
+      .nav-button:hover {
+        background-color: navajowhite;
+      }
+
+      #home-button {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-container">
+      <h1 class="slogan">Get in Touch with Zero Fashion</h1>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <p>fws@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <p>+91 9876543210</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>32 abc street, xyz city, 123456 india</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <p>Mon-Fri: 9am-6pm, Sat: 10am-4pm</p>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <p>&copy; 2024 Zero Fashion. All rights reserved.</p>
+      </div>
+      <div class="nav-container">
+        <button class="nav-button" id="home-button">Home</button>
+        <button class="nav-button" id="category-button">Category</button>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="./js/nav.js"></script>
+
+    <script>
+      document
+        .getElementById("home-button")
+        .addEventListener("click", function () {
+          window.location.href = "./index.html";
+        });
+
+      document
+        .getElementById("category-button")
+        .addEventListener("click", function () {
+          window.location.href = "./categories.html";
+        });
+    </script>
+  </body>
+</html>

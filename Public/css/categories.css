@@ -1,0 +1,123 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+h1{
+  padding-top: 110px;
+  margin:20px;
+  text-align: center;
+}
+hr{
+  
+  max-width: 200px;
+  border:1px solid #caa529;
+}
+#name-fashion{
+  color:#f84258;
+}
+
+.trends-header, .main-head-of-color-gold{
+    color:#caa529;
+}
+.trends-categories, .for-her, .for-him{
+    display:grid;
+    padding-left:50px;
+    justify-items: center;
+}
+.trends-categories{
+    grid-template-columns: repeat(3,1fr);
+}
+.for-her{
+    grid-template-columns: repeat(2,1fr);
+}
+.for-him{
+    grid-template-columns: repeat(5,1fr);
+}
+
+.product-img {
+    display: grid;
+  object-fit: cover;
+  grid-template-columns: repeat(auto-fill, minmax(1200px, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  width: 100vh;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 500px; 
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-img img:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.trends-categories img {
+  transition: all 0.2s ease-in-out;
+}
+
+.trends-categories img:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.for-her img {
+  transition: all 0.2s ease-in-out;
+}
+
+.for-her img:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.for-him img {
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 40px;
+}
+
+.for-him img:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Media queries for responsiveness */
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+  .product-img {
+    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .product-img {
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    }
+  }
+
+/* Small screens (mobiles) */
+@media only screen and (max-width: 767px) {
+  .product-img {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  .product-img img {
+    height: 300px;
+    }
+}
+.trends-categories img:hover,
+.for-her img:hover,
+.for-him img:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
