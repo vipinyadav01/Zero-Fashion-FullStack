@@ -148,7 +148,7 @@ nav a:hover {
     right: 0px;
     height: 50vh;
     top: 1vh;
-    background-color: transparent;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,15 +175,12 @@ nav a:hover {
 
   nav a:hover {
     color: #f7f7f7;
-    /* Hover color */
     text-decoration: none;
-    /* No underline on hover */
   }
 }
 
 .nav-active {
   transform: translateX(0%);
-  /* Show nav when active */
 }
 
 @keyframes navLinkFade {
