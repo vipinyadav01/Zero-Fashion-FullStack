@@ -8,7 +8,7 @@
 /* Navigation styles */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Changed from space-around for better spacing */
   align-items: center;
   min-height: 10vh;
   background-color: #ffffff;
@@ -18,7 +18,7 @@ nav {
   z-index: 100000;
   box-shadow: 0 2px 5px black;
   letter-spacing: 1px;
-  transition: 0.4s;
+  transition: background-color 0.4s, box-shadow 0.4s; /* Added transition for background color */
 }
 
 a {
@@ -27,99 +27,62 @@ a {
 
 nav a {
   color: black;
-  float: left;
-  text-align: center;
-  padding: 10px 0px;
+  padding: 10px;
   font-size: 19px;
   line-height: 25px;
   border-radius: 4px;
   font-family: "Courier New", Courier, monospace;
-  letter-spacing: 0.3px;
 }
 
 nav ul li a {
   font-size: 0.87rem;
-  font-family: "Courier New", Courier, monospace;
-  letter-spacing: 0.3px;
-  color: black;
 }
 
+/* Hover effects */
 nav a:hover {
   color: #f84258;
-  text-decoration: none;
-  background-color: #fffdfd;
 }
 
-/* Logo styles */
 .logo {
-  float: left;
-  margin-left: 20px;
   display: flex;
   align-items: center;
-  margin-left: 1px;
-  margin-right: 230px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  letter-spacing: 1px;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 25px;
 }
 
 .logo-icon {
-  display: inline-block;
   width: 25px;
   height: 25px;
-  margin-right: 20px;
 }
 
 .logo h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  text-decoration: none;
-  color: #333;
 }
 
 .logo-name {
   font-size: 28px;
-  font-weight: bold;
-  text-align: left;
-  font-family: "Courier New", Courier, monospace;
-  color: #333;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-
-.logo-name:hover {
-  color: #f84258;
-  text-decoration: none;
 }
 
 /* Nav links styles */
 .nav-links {
   display: flex;
   list-style: none;
-  width: 50%;
-  justify-content: flex-end;
-  gap: 1rem;
-  letter-spacing: 2px;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
-  will-change: transform;
-  transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: auto; /* Ensures spacing on the right */
 }
 
 .nav-links li a:hover {
   color: darkcyan;
-  text-decoration: none;
 }
 
 /* Burger menu styles */
 .burger {
-  display: none;
+  display: none; /* Hidden by default */
   cursor: pointer;
 }
 
@@ -131,9 +94,10 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
+/* Responsive styles */
 @media screen and (max-width: 1024px) {
   .nav-links {
-    width: 80%;
+    width: auto; /* Adjusted for better responsiveness */
   }
 }
 
@@ -144,67 +108,62 @@ nav a:hover {
 
   .nav-links {
     position: absolute;
-    right: 0px;
-    height: 50vh;
-    top: 1vh;
-    background-color: transparent;
-    display: flex;
+    right: -100%; /* Start off-screen */
+    height: auto; /* Auto height for better fitting */
+    top: min(
+      10vh,
+      calc(10vh + var(--header-height))
+    ); /* Adjust top position based on header height */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.95
+    ); /* Semi-transparent background */
     flex-direction: column;
     align-items: center;
     width: 100%;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-  }
-
-  .nav-links li {
-    opacity: 0;
-    animation: navLinkFade 0.5s forwards;
-    -webkit-animation: navLinkFade 0.5s forwards;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
   }
 
   .burger {
-    display: block;
-    margin: 10px;
+    display: block; /* Show burger menu on smaller screens */
+    margin-right: 20px; /* Right margin for alignment */
   }
 
   nav a {
-    color: rgb(231, 216, 216);
-    /* Link color */
+    color: rgb(231, 216, 216); /* Link color for mobile view */
   }
 
   nav a:hover {
-    color: #f7f7f7;
-    /* Hover color */
-    text-decoration: none;
-    /* No underline on hover */
+    color: #f7f7f7; /* Hover color for mobile view */
   }
 }
 
 .nav-active {
-  transform: translateX(0%);
-  /* Show nav when active */
+  transform: translateX(0%); /* Show nav when active */
 }
 
+/* Animation for nav links fading in */
 @keyframes navLinkFade {
   from {
     opacity: 0;
     transform: translateX(50px);
   }
-
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
 
+/* Burger menu toggle animations */
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
-
 .toggle .line2 {
   opacity: 0;
 }
-
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
