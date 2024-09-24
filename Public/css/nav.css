@@ -61,6 +61,7 @@ nav a:hover {
   margin-bottom: 5px;
   margin-top: 5px;
   letter-spacing: 1px;
+  justify-content: space-between;
 }
 
 .logo-icon {
@@ -104,6 +105,12 @@ nav a:hover {
   font-weight: 600;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
+  will-change: transform;
+  transition: transform 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .nav-links li a:hover {
@@ -124,53 +131,41 @@ nav a:hover {
   margin: 5px;
   transition: all 0.3s ease;
 }
-      
+
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 80%;
-    /* Adjust width for medium screens */
   }
 }
 
 @media screen and (min-width: 768px) {
   body {
     overflow-x: hidden;
-    /* Prevent horizontal overflow */
   }
 
   .nav-links {
     position: absolute;
-    /* Positioning for mobile */
     right: 0px;
     height: 50vh;
-    /* Full height */
     top: 1vh;
-    background-color: none;
-    /* Background color */
+    background-color: transparent;
     display: flex;
     flex-direction: column;
-    /* Column layout */
     align-items: center;
-    /* Center items */
     width: 100%;
-    /* Full width */
     transform: translateX(100%);
-    /* Start off-screen */
     transition: transform 0.5s ease-in;
-    /* Smooth transition */
   }
 
   .nav-links li {
     opacity: 0;
-    /*Initiallyhidden*/
     animation: navLinkFade 0.5s forwards;
-    /* Fade in animation */
     -webkit-animation: navLinkFade 0.5s forwards;
   }
 
   .burger {
     display: block;
-    /* Show burger menu */
+    margin: 10px;
   }
 
   nav a {
