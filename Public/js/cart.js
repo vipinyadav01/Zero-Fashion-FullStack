@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       itemElement.classList.add("cart-item");
       itemElement.innerHTML = `
                 <h3>${item.name}</h3>
-                <p>Price: $${item.price.toFixed(2)}</p>
+                <p>Price: ₹${item.price.toFixed(2)}</p>
                 <p>Quantity: ${item.quantity}</p>
                 <button class="remove-item" data-name="${
                   item.name
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   clearCartButton.addEventListener("click", clearCart);
-
 
   cartItems.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-item")) {

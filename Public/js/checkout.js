@@ -14,7 +14,7 @@ function loadCart() {
   });
 
   totalAmout.forEach((amount) => {
-    amount.textContent = `$ ${total}`;
+    amount.textContent = `₹ ${total}`;
   });
 }
 document.addEventListener("DOMContentLoaded", function () {

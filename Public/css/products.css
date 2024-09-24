@@ -3,16 +3,18 @@
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #f3f3f3;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
+  margin: auto;
 }
 
 .bg-images img {
-  width: 900px;
   object-fit: cover;
   margin: 10px;
   box-shadow: 0 0 15px black;
+  width: 100%;
+  max-width: 1160px;
+  height: 600px;
+  margin: 20px auto;
+  display: block;
 }
 
 .centered {
@@ -57,64 +59,21 @@
   width: 100%;
 }
 
-.kurti,
-.western,
-.heels,
-.g-shoes,
-.shirts,
-.shoes,
-.joggers,
-.jeans {
+[class*="kurti"],
+[class*="western"],
+[class*="heels"],
+[class*="g-shoes"],
+[class*="shirts"],
+[class*="shoes"],
+[class*="joggers"],
+[class*="jeans"] {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 50px;
+  padding: 50px 30px;
   margin: 10px 20px;
   box-shadow: 5px 5px 15px whitesmoke;
   justify-items: center;
-}
-
-@media screen and (max-width: 974px) {
-
-  .kurti,
-  .western,
-  .heels,
-  .g-shoes,
-  .shirts,
-  .shoes,
-  .joggers,
-  .jeans {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .bg-images img {
-    width: 100%;
-    /* Make images responsive */
-    margin: 5px;
-    /* Adjust margin for smaller screens */
-  }
-
-  .kurti,
-  .western,
-  .heels,
-  .g-shoes,
-  .shirts,
-  .shoes,
-  .joggers,
-  .jeans {
-    grid-template-columns: repeat(2, 1fr);
-    /* Change to 2 columns */
-  }
-
-  .header-categories {
-    font-size: 20px;
-    /* Adjust font size */
-  }
 }
 
 .btn-of-img {
@@ -195,23 +154,76 @@ img {
   box-shadow: 5px 5px 5px black;
 }
 
-.kurti img:hover,
-.western img:hover,
-.g-shoes img:hover,
-.heels img:hover,
-.shirts img:hover,
-.jeans img:hover,
-.joggers img:hover,
-.shoes img:hover,
-.view2 button:hover {
+[class*="img"]:hover {
   transform: scale(1.05);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.bg-images img:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+@media screen and (max-width: 768px) {
+  .header-categories {
+    padding-top: 150px;
+    font-size: 20px;
+  }
+
+  [class*="kurti"],
+  [class*="western"],
+  [class*="heels"],
+  [class*="g-shoes"],
+  [class*="shirts"],
+  [class*="shoes"],
+  [class*="joggers"],
+  [class*="jeans"] {
+    padding: 30px 20px;
+  }
+
+  .view2 {
+    left: auto;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bg-images {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .main-head-of-products {
+    padding-top: 80px;
+  }
+
+  .bigletter {
+    font-size: 60px;
+  }
+
+  .header-categories {
+    padding-top: 120px;
+    font-size: 18px;
+  }
+
+  [class*="kurti"],
+  [class*="western"],
+  [class*="heels"],
+  [class*="g-shoes"],
+  [class*="shirts"],
+  [class*="shoes"],
+  [class*="joggers"],
+  [class*="jeans"] {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-details {
+    padding-left: 30px;
+  }
+}
+img {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+img:hover {
+  transform: scale(1.05); /* Scale up the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
