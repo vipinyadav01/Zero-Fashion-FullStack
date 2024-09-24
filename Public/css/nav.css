@@ -132,7 +132,7 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   body {
     overflow-x: hidden;
     /* Prevent horizontal overflow */
@@ -165,7 +165,6 @@ nav a:hover {
     /*Initiallyhidden*/
     animation: navLinkFade 0.5s forwards;
     /* Fade in animation */
-    : ;
     -webkit-animation: navLinkFade 0.5s forwards;
   }
 

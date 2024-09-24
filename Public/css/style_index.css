@@ -15,6 +15,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
 }
+
 .slider {
   position: relative;
   width: 100%;
@@ -51,6 +52,7 @@ img {
   padding: 0%;
   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
+
 .para-of-offer {
   color: black;
   text-align: center;
@@ -149,6 +151,7 @@ img {
   object-fit: contain;
   transition: box-shadow 0.2s ease-in-out;
 }
+
 .index-grid-img-2 p {
   font-size: 5px;
   color: black;
@@ -218,6 +221,7 @@ h6 {
 }
 
 @media screen and (max-width: 593px) {
+
   .footer-container .footer-1 h2,
   p,
   h5,
@@ -245,6 +249,7 @@ h6 {
   position: relative;
   cursor: pointer;
 }
+
 .profile__data {
   width: 20vw;
   position: absolute;
