@@ -234,10 +234,11 @@ h6 {
 .index-grid-img-2 img:hover,
 .index-grid-img-3 img:hover,
 .index-offers-img img:hover {
-  transform: scale(1.05);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transform: matrix(1, 0, 0, 1, 0, 0); /* Updated transform */
+  transition: 0.5s; /* Added transition */
+  outline: rgb(51, 51, 51) dashed 0px; /* Added outline */
+  box-sizing: border-box; /* Added box-sizing */
+  box-shadow: rgba(0, 0, 0, 0.52) 0px 11px 9px; /* Updated box-shadow */
 }
 
 .profile {
