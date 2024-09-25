@@ -15,6 +15,7 @@ body {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
 }
+
 .slider {
   position: relative;
   width: 100%;
@@ -24,9 +25,7 @@ body {
 
 .slides {
   display: flex;
-  flex-direction: row;
-
-  margin-top: 40px;
+  flex-direction: row margin-top: 40px;
 }
 
 .slides img {
@@ -51,6 +50,7 @@ img {
   padding: 0%;
   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
+
 .para-of-offer {
   color: black;
   text-align: center;
@@ -117,7 +117,6 @@ img {
   width: 90%;
   height: auto;
   object-fit: cover;
-  transition: box-shadow 0.2s ease-in-out;
 }
 
 .info-of-img-below {
@@ -147,8 +146,8 @@ img {
   max-width: 290px;
   height: 290px;
   object-fit: contain;
-  transition: box-shadow 0.2s ease-in-out;
 }
+
 .index-grid-img-2 p {
   font-size: 5px;
   color: black;
@@ -218,6 +217,7 @@ h6 {
 }
 
 @media screen and (max-width: 593px) {
+
   .footer-container .footer-1 h2,
   p,
   h5,
@@ -230,7 +230,7 @@ h6 {
   color: white !important;
 }
 
-.index-grid-img-1 img:hover,
+/* .index-grid-img-1 img:hover,
 .index-grid-img-2 img:hover,
 .index-grid-img-3 img:hover,
 .index-offers-img img:hover {
@@ -238,12 +238,13 @@ h6 {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
+} */
 
 .profile {
   position: relative;
   cursor: pointer;
 }
+
 .profile__data {
   width: 20vw;
   position: absolute;
