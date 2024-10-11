@@ -11,9 +11,9 @@ const navItems = [
 
 // Slider items
 const slides = [
-  { id: 1, image: "path/to/image1.jpg", alt: "Slide 1" },
-  { id: 2, image: "path/to/image2.jpg", alt: "Slide 2" },
-  { id: 3, image: "path/to/image3.jpg", alt: "Slide 3" },
+  { id: 1, image: "images/si/si1.jpg", alt: "Slide 1" },
+  { id: 2, image: "images/si/si2.jpg", alt: "Slide 2" },
+  { id: 3, image: "images/si/si3.jpg", alt: "Slide 3" },
 ];
 
 // Navigation logic
@@ -25,7 +25,7 @@ function initNavigation() {
   }
 
   // Create navbar HTML
-  
+
   navbar.innerHTML = `
     <div class="navbar-container">
       <a href="index.html" class="navbar-logo">
