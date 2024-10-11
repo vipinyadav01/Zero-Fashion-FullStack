@@ -1,77 +1,124 @@
+// Navigation items
+const navItems = [
+  { href: "index.html", label: "Home" },
+  { href: "products.html", label: "Products" },
+  { href: "categories.html", label: "Categories" },
+  { href: "cart.html", label: "Cart" },
+  { href: "contact.html", label: "Contact" },
+  { href: "logout.html", label: "Logout" },
+  { href: "orders.html", label: "Orders" },
+];
+
+// Slider items
+const slides = [
+  { id: 1, image: "path/to/image1.jpg", alt: "Slide 1" },
+  { id: 2, image: "path/to/image2.jpg", alt: "Slide 2" },
+  { id: 3, image: "path/to/image3.jpg", alt: "Slide 3" },
+];
+
 // Navigation logic
-const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
+function initNavigation() {
+  const navbar = document.querySelector(".navbar");
+  if (!navbar) {
+    console.error("Navbar element not found");
+    return;
+  }
+
+  // Create navbar HTML
+  
+  navbar.innerHTML = `
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="path/to/your-logo.png" alt="Your Logo" class="h-8 w-auto">
+      </a>
+      <ul class="navbar-list"></ul>
+      <div class="navbar-icons">
+        <a href="cart.html" class="cart-icon" aria-label="View cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="login.html" class="user-icon" aria-label="View profile">
+          <i class="fas fa-user"></i>
+        </a>
+      </div>
+      <button class="burger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  `;
+
+  const navList = navbar.querySelector(".navbar-list");
+  navItems.forEach((item) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${item.href}">${item.label}</a>`;
+    navList.appendChild(li);
+  });
+
+  const burger = navbar.querySelector(".burger");
+  const nav = navbar.querySelector(".navbar-list");
 
   burger.addEventListener("click", () => {
     nav.classList.toggle("nav-active");
-
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 7 + 0.6
-        }s`;
-      }
-    });
     burger.classList.toggle("toggle");
+
+    // Accessibility: Update aria-expanded attribute
+    const isExpanded = nav.classList.contains("nav-active");
+    burger.setAttribute("aria-expanded", isExpanded);
   });
-};
-
-// Initialize navigation
-navSlide();
-
-// DOM manipulation for navbar
-document.addEventListener("DOMContentLoaded", () => {
-  const navbarList = document.querySelector(".navbar");
-
-  if (navbarList) {
-    navbarList.innerHTML = `
-      <div class="navbar-container">
-        <a href="index.html" class="navbar-logo">Your Logo</a>
-        <ul class="navbar-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="login.html">logout</a></li>
-          <li><a href="orders.html">Orders</a></li>
-
-        </ul>
-        <div class="navbar-icons">
-          <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-          <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
-        </div>
-      </div>
-    `;
-  } else {
-    console.error("Navbar element not found");
-  }
-});
+}
 
 // Slider logic
-const sliderContainer = document.querySelector(".slider");
-const slides = document.querySelectorAll(".slide");
+function initSlider() {
+  const sliderContainer = document.querySelector(".slider");
+  if (!sliderContainer) {
+    console.error("Slider container not found");
+    return;
+  }
 
-let slideIndex = 0;
-const interval = 3000; // 3 seconds
+  let currentSlide = 0;
+  const interval = 3000; // 3 seconds
 
-function showNextSlide() {
-  slides[slideIndex].style.display = "none";
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].style.display = "block";
+  // Create slider HTML
+  sliderContainer.innerHTML = `
+    <div class="slides"></div>
+    <button class="prev" aria-label="Previous slide">&#10094;</button>
+    <button class="next" aria-label="Next slide">&#10095;</button>
+  `;
+
+  const slidesContainer = sliderContainer.querySelector(".slides");
+  slides.forEach((slide, index) => {
+    const slideElement = document.createElement("div");
+    slideElement.className = "slide";
+    slideElement.style.display = index === 0 ? "block" : "none";
+    slideElement.innerHTML = `<img src="${slide.image}" alt="${slide.alt}">`;
+    slidesContainer.appendChild(slideElement);
+  });
+
+  function showSlide(index) {
+    const slideElements = slidesContainer.querySelectorAll(".slide");
+    slideElements[currentSlide].style.display = "none";
+    slideElements[index].style.display = "block";
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((currentSlide - 1 + slides.length) % slides.length);
+  }
+
+  sliderContainer.querySelector(".next").addEventListener("click", nextSlide);
+  sliderContainer.querySelector(".prev").addEventListener("click", prevSlide);
+
+  // Auto-advance slides
+  setInterval(nextSlide, interval);
 }
 
-function showPrevSlide() {
-  slides[slideIndex].style.display = "none";
-  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-  slides[slideIndex].style.display = "block";
-}
-
-setInterval(showNextSlide, interval);
-
-document.querySelector(".next").addEventListener("click", showNextSlide);
-document.querySelector(".prev").addEventListener("click", showPrevSlide);
+// Initialize everything when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  initNavigation();
+  initSlider();
+});
