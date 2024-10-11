@@ -1,125 +1,142 @@
 // Navigation items
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/categories", label: "Categories" },
-  { href: "/cart", label: "Cart" },
-  { href: "/contact", label: "Contact" },
-  { href: "/logout", label: "Logout" },
-  { href: "/orders", label: "Orders" },
+  { href: "index.html", label: "Home" },
+  { href: "products.html", label: "Products" },
+  { href: "categories.html", label: "Categories" },
+  { href: "cart.html", label: "Cart" },
+  { href: "contact.html", label: "Contact" },
+  { href: "logout.html", label: "Logout" },
+  { href: "orders.html", label: "Orders" },
 ];
 
-function createNavigation() {
-  const nav = document.createElement("nav");
-  nav.className = "bg-white shadow-md";
+// Slider items
+const slides = [
+  { id: 1, image: "images/si/si1.jpg", alt: "Slide 1" },
+  { id: 2, image: "images/si/si2.jpg", alt: "Slide 2" },
+  { id: 3, image: "images/si/si3.jpg", alt: "Slide 3" },
+];
 
-  const container = document.createElement("div");
-  container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8";
+// Navigation logic
+function initNavigation() {
+  const navbar = document.querySelector(".navbar");
+  if (!navbar) {
+    console.error("Navbar element not found");
+    return;
+  }
 
-  const innerContainer = document.createElement("div");
-  innerContainer.className = "flex justify-between h-16";
-
-  // Logo
-  const logoContainer = document.createElement("div");
-  logoContainer.className = "flex";
-  const logoLink = document.createElement("a");
-  logoLink.href = "/";
-  logoLink.className = "flex-shrink-0 flex items-center";
-  const logoImg = document.createElement("img");
-  logoImg.src = "/placeholder.svg?height=32&width=32";
-  logoImg.alt = "Your Logo";
-  logoImg.className = "h-8 w-auto";
-  logoLink.appendChild(logoImg);
-  logoContainer.appendChild(logoLink);
-
-  // Desktop menu
-  const desktopMenu = document.createElement("div");
-  desktopMenu.className = "hidden sm:ml-6 sm:flex sm:space-x-8";
-  navItems.forEach((item) => {
-    const link = document.createElement("a");
-    link.href = item.href;
-    link.className =
-      "text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium";
-    link.textContent = item.label;
-    desktopMenu.appendChild(link);
-  });
-
-  // Desktop icons
-  const desktopIcons = document.createElement("div");
-  desktopIcons.className = "hidden sm:ml-6 sm:flex sm:items-center";
-  const cartLink = document.createElement("a");
-  cartLink.href = "/cart";
-  cartLink.className = "p-2 text-gray-400 hover:text-gray-500";
-  cartLink.innerHTML =
-    '<span class="sr-only">View cart</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>';
-  const userLink = document.createElement("a");
-  userLink.href = "/profile";
-  userLink.className = "p-2 text-gray-400 hover:text-gray-500";
-  userLink.innerHTML =
-    '<span class="sr-only">View profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
-  desktopIcons.appendChild(cartLink);
-  desktopIcons.appendChild(userLink);
-
-  // Mobile menu button
-  const mobileMenuButton = document.createElement("button");
-  mobileMenuButton.className = "-mr-2 flex items-center sm:hidden";
-  mobileMenuButton.innerHTML =
-    '<span class="sr-only">Open main menu</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-
-  innerContainer.appendChild(logoContainer);
-  innerContainer.appendChild(desktopMenu);
-  innerContainer.appendChild(desktopIcons);
-  innerContainer.appendChild(mobileMenuButton);
-
-  container.appendChild(innerContainer);
-  nav.appendChild(container);
-
-  // Mobile menu (hidden by default)
-  const mobileMenu = document.createElement("div");
-  mobileMenu.className = "sm:hidden hidden";
-  const mobileMenuLinks = document.createElement("div");
-  mobileMenuLinks.className = "pt-2 pb-3 space-y-1";
-  navItems.forEach((item) => {
-    const link = document.createElement("a");
-    link.href = item.href;
-    link.className = "text-gray-900 block px-3 py-2 text-base font-medium";
-    link.textContent = item.label;
-    mobileMenuLinks.appendChild(link);
-  });
-  mobileMenu.appendChild(mobileMenuLinks);
-
-  const mobileMenuProfile = document.createElement("div");
-  mobileMenuProfile.className = "pt-4 pb-3 border-t border-gray-200";
-  mobileMenuProfile.innerHTML = `
-    <div class="flex items-center px-4">
-      <div class="flex-shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 rounded-full"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  // Create navbar HTML
+  navbar.innerHTML = `
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="path/to/your-logo.png" alt="Your Logo" class="h-8 w-auto">
+      </a>
+      <ul class="navbar-list"></ul>
+      <div class="navbar-icons">
+        <a href="cart.html" class="cart-icon" aria-label="View cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="login.html" class="user-icon" aria-label="View profile">
+          <i class="fas fa-user"></i>
+        </a>
       </div>
-      <div class="ml-3">
-        <div class="text-base font-medium text-gray-800">User Name</div>
-        <div class="text-sm font-medium text-gray-500">user@example.com</div>
-      </div>
-    </div>
-    <div class="mt-3 space-y-1">
-      <a href="/profile" class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Your Profile</a>
-      <a href="/settings" class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Settings</a>
-      <a href="/logout" class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign out</a>
+      <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   `;
-  mobileMenu.appendChild(mobileMenuProfile);
 
-  nav.appendChild(mobileMenu);
-
-  // Toggle mobile menu
-  mobileMenuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  const navList = navbar.querySelector(".navbar-list");
+  navItems.forEach((item) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${item.href}">${item.label}</a>`;
+    navList.appendChild(li);
   });
 
-  return nav;
+  const burger = navbar.querySelector(".burger");
+  const nav = navbar.querySelector(".navbar-list");
+
+  burger.addEventListener("click", () => {
+    const isExpanded = nav.classList.toggle("nav-active");
+    burger.classList.toggle("toggle");
+    burger.setAttribute("aria-expanded", isExpanded);
+  });
 }
 
-// Initialize navigation when the DOM is fully loaded
+// Slider logic
+function initSlider() {
+  const sliderContainer = document.querySelector(".slider");
+  if (!sliderContainer) {
+    console.error("Slider container not found");
+    return;
+  }
+
+  let currentSlide = 0;
+  const interval = 3000; // 3 seconds
+
+  // Create slider HTML
+  sliderContainer.innerHTML = `
+    <div class="slides"></div>
+    <button class="prev" aria-label="Previous slide">&#10094;</button>
+    <button class="next" aria-label="Next slide">&#10095;</button>
+  `;
+
+  const slidesContainer = sliderContainer.querySelector(".slides");
+  slides.forEach((slide, index) => {
+    const slideElement = document.createElement("div");
+    slideElement.className = "slide";
+    slideElement.style.display = index === 0 ? "block" : "none";
+    slideElement.innerHTML = `<img src="${slide.image}" alt="${slide.alt}">`;
+    slidesContainer.appendChild(slideElement);
+  });
+
+  function showSlide(index) {
+    const slideElements = slidesContainer.querySelectorAll(".slide");
+    slideElements[currentSlide].style.display = "none";
+    slideElements[index].style.display = "block";
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((currentSlide - 1 + slides.length) % slides.length);
+  }
+
+  const nextButton = sliderContainer.querySelector(".next");
+  const prevButton = sliderContainer.querySelector(".prev");
+
+  nextButton.addEventListener("click", () => {
+    nextSlide();
+    resetInterval();
+  });
+
+  prevButton.addEventListener("click", () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  let slideInterval = setInterval(nextSlide, interval);
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, interval);
+  }
+
+  // Pause auto-advance on hover
+  sliderContainer.addEventListener("mouseenter", () =>
+    clearInterval(slideInterval)
+  );
+  sliderContainer.addEventListener("mouseleave", () => {
+    slideInterval = setInterval(nextSlide, interval);
+  });
+}
+
+// Initialize everything when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  const navigation = createNavigation();
-  document.body.prepend(navigation);
+  initNavigation();
+  initSlider();
 });
