@@ -5,17 +5,20 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./images/Favicon/apple-touch-icon.png" />
+      href="./images/Favicon/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/Favicon/favicon-32x32.png" />
+      href="./images/Favicon/favicon-32x32.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./images/Favicon/favicon-16x16.png" />
+      href="./images/Favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="./images/Favicon/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -23,161 +26,167 @@
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <!-- Custom CSS -->
     <style>
-      
-     :root {
-  --glass-bg: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  --text-color: #333;
-  --accent-color: #007bff;
-}
+      :root {
+        --glass-bg: rgba(255, 255, 255, 0.25);
+        --glass-border: rgba(255, 255, 255, 0.18);
+        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        --text-color: #333;
+        --accent-color: #007bff;
+      }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  background: linear-gradient(45deg, #e1c9ca 0%, #fad0c4 99%, #fad0c4 100%);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: linear-gradient(
+          45deg,
+          #e1c9ca 0%,
+          #fad0c4 99%,
+          #fad0c4 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
 
-.contact-container {
-  position: relative;
-  top: 80px;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 30px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-}
+      .contact-container {
+        position: relative;
+        top: 80px;
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 30px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
 
-.slogan {
-  font-family: "Courier New", Courier, monospace;
-  color: var(--text-color);
-  font-size: 36px;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
+      .slogan {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--text-color);
+        font-size: 36px;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
 
-.contact-item {
-  flex-basis: 48%;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: var(--glass-bg);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  padding: 15px;
-  transition: transform 0.3s ease;
-}
+      .contact-item {
+        flex-basis: 48%;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: var(--glass-bg);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 15px;
+        transition: transform 0.3s ease;
+      }
 
-.contact-item:hover {
-  transform: translateY(-5px);
-}
+      .contact-item:hover {
+        transform: translateY(-5px);
+      }
 
-.contact-item i {
-  font-size: 24px;
-  color: var(--accent-color);
-  margin-right: 15px;
-}
+      .contact-item i {
+        font-size: 24px;
+        color: var(--accent-color);
+        margin-right: 15px;
+      }
 
-.contact-item p {
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--text-color);
-  margin: 0;
-}
+      .contact-item p {
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--text-color);
+        margin: 0;
+      }
 
-.social-links {
-  margin-top: 30px;
-  text-align: center;
-}
+      .social-links {
+        margin-top: 30px;
+        text-align: center;
+      }
 
-.social-links a {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 24px;
-  color: var(--text-color);
-  transition: color 0.3s ease, transform 0.3s ease;
-}
+      .social-links a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 24px;
+        color: var(--text-color);
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
 
-.social-links a:hover {
-  color: var(--accent-color);
-  transform: scale(1.2);
-}
+      .social-links a:hover {
+        color: var(--accent-color);
+        transform: scale(1.2);
+      }
 
-.nav-container {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
+      .nav-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+      }
 
-.nav-button {
-  background: var(--glass-bg);
-  color: var(--text-color);
-  border: 1px solid var(--glass-border);
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  margin: 0 10px;
-}
+      .nav-button {
+        background: var(--glass-bg);
+        color: var(--text-color);
+        border: 1px solid var(--glass-border);
+        padding: 12px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        margin: 0 10px;
+      }
 
-.nav-button:hover {
-  background: var(--accent-color);
-  color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+      .nav-button:hover {
+        background: var(--accent-color);
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
 
-@media screen and (max-width: 768px) {
-  .contact-container {
-    padding: 20px;
-  }
+      @media screen and (max-width: 768px) {
+        .contact-container {
+          padding: 20px;
+        }
 
-  .slogan {
-    font-size: 28px;
-  }
+        .slogan {
+          font-size: 28px;
+        }
 
-  .contact-item {
-    flex-basis: 100%;
-  }
-}
+        .contact-item {
+          flex-basis: 100%;
+        }
+      }
 
-@media screen and (max-width: 480px) {
-  .contact-container {
-    padding: 15px;
-  }
+      @media screen and (max-width: 480px) {
+        .contact-container {
+          padding: 15px;
+        }
 
-  .slogan {
-    font-size: 24px;
-  }
+        .slogan {
+          font-size: 24px;
+        }
 
-  .nav-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
+        .nav-button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -186,30 +195,31 @@ body {
       <div class="contact-info">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
-          <p>fws@gmail.com</p>
+          <p>vipinyadav9m@gmail.com</p>
         </div>
         <div class="contact-item">
           <i class="fas fa-phone"></i>
-          <p>+91 9876543210</p>
+          <p>+91 9219658994</p>
         </div>
         <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
-          <p>32 abc street, xyz city, 123456 india</p>
+          <p>Deokali, Ghazipur, 233306 india</p>
         </div>
         <div class="contact-item">
           <i class="fas fa-clock"></i>
-          <p>Mon-Fri: 9am-6pm, Sat: 10am-4pm</p>
+          <p>Mon-Fri: 9am-4pm, Sat: 11am-6pm</p>
         </div>
       </div>
       <div class="social-links">
-        <a href="https://www.facebook.com" target="_blank"><i
-            class="fab fa-facebook"></i></a>
-        <a href="https://www.twitter.com" target="_blank"><i
-            class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i
-            class="fab fa-linkedin"></i></a>
+        <a href="https://www.twitter.com/vipinyadav9m" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/vipinyadav01" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
         <p>&copy; 2024 Zero Fashion. All rights reserved.</p>
       </div>
       <div class="nav-container">
@@ -218,10 +228,8 @@ body {
       </div>
     </div>
 
-    <script
-      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="./js/nav.js"></script>
 
     <script>

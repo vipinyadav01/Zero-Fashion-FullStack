@@ -34,6 +34,7 @@ img {
   width: 100%;
   height: 350px;
   overflow: hidden;
+  margin-top: 15%;
 }
 
 .slides {
@@ -205,23 +206,6 @@ img {
   color: black;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-container h2,
-  .footer-container p,
-  .footer-container h5,
-  .footer-container h6 {
-    padding-left: 20px;
-  }
-
-  .footer ul li {
-    margin-left: 20px;
-  }
-}
-
 .index-grid-img-1 img:hover,
 .index-grid-img-2 img:hover,
 .index-grid-img-3 img:hover,
@@ -272,6 +256,7 @@ p {
   margin-bottom: 20px;
 }
 
+/* Breakpoint: 1200px */
 @media (max-width: 1200px) {
   .index-offers-img,
   .index-grid-img-3 {
@@ -279,6 +264,7 @@ p {
   }
 }
 
+/* Breakpoint: 900px */
 @media (max-width: 900px) {
   .index-offers-img,
   .index-grid-img-3 {
@@ -290,6 +276,7 @@ p {
   }
 }
 
+/* Breakpoint: 768px */
 @media (max-width: 768px) {
   .index-main-img {
     padding-top: 116px;
@@ -303,8 +290,20 @@ p {
   .footer-container {
     grid-template-columns: 1fr;
   }
+
+  .footer-container h2,
+  .footer-container p,
+  .footer-container h5,
+  .footer-container h6 {
+    padding-left: 20px;
+  }
+
+  .footer ul li {
+    margin-left: 20px;
+  }
 }
 
+/* Breakpoint: 600px */
 @media (max-width: 600px) {
   .index-offers-img,
   .index-grid-img-3 {
@@ -312,6 +311,7 @@ p {
   }
 }
 
+/* Breakpoint: 593px */
 @media screen and (max-width: 593px) {
   .footer-container h2,
   .footer-container p,
