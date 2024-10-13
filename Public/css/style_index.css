@@ -34,7 +34,6 @@ img {
   width: 100%;
   height: 350px;
   overflow: hidden;
-  margin-top: 15%;
 }
 
 .slides {
@@ -318,6 +317,9 @@ p {
   .footer-container h5,
   .footer-container h6 {
     padding-left: 10px;
+  }
+  .slider {
+    margin-top: 15%;
   }
 }
 
