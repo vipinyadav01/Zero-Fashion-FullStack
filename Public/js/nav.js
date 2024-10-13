@@ -1,12 +1,14 @@
 // Navigation items
 const navItems = [
+  { href: "profile.html", label: "Profile" },
   { href: "index.html", label: "Home" },
-  { href: "products.html", label: "Products" },
   { href: "categories.html", label: "Categories" },
+  { href: "products.html", label: "Products" },
   { href: "cart.html", label: "Cart" },
   { href: "contact.html", label: "Contact" },
-  { href: "logout.html", label: "Logout" },
   { href: "orders.html", label: "Orders" },
+  { href: "logout.html", label: "Logout" },
+  { href: "login.html", label: "Login" },
 ];
 
 // Slider items
