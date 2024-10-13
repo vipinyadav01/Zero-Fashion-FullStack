@@ -54,9 +54,11 @@ img {
   font-family: "Stencil Std", fantasy;
   font-weight: bold;
   background: var(--gradient-light);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 10px;
-  margin-left: 600px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .para-of-offer {
@@ -65,9 +67,11 @@ img {
   font-family: monospace;
   margin-bottom: 20px;
   background: var(--gradient-dark);
-  display: inline-block;
+  display: flex;
   padding: 10px;
-  margin-left: 600px;
+  margin-inline: auto;
+  text-align: center;
+  justify-content: center;
 }
 
 .index-main-img {
