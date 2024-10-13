@@ -165,6 +165,8 @@ button:hover {
   .container {
     margin: 0;
     padding: 10px;
+    border-radius: 0;
+    margin-top: 10%;
   }
 
   .d-flex {
@@ -175,6 +177,7 @@ button:hover {
   .Yorder {
     flex: 1;
     margin-right: 0;
+    margin-top: 10%;
   }
 
   label > span {
@@ -197,5 +200,6 @@ button:hover {
 @media (min-width: 769px) and (max-width: 1200px) {
   .container {
     max-width: 90%;
+    margin-top: 10%;
   }
 }
