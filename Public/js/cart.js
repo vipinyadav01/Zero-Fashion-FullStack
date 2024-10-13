@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log("Cart data:", cart);
 
     cartItems.innerHTML = "";
 
@@ -18,19 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0;
 
     cart.forEach((item) => {
+      const splittedItem = item.split("||")
       const itemElement = document.createElement("div");
       itemElement.classList.add("cart-item");
       itemElement.innerHTML = `
-                <h3>${item.name}</h3>
-                <p>Price: ₹${item.price.toFixed(2)}</p>
-                <p>Quantity: ${item.quantity}</p>
+                <h3>${splittedItem[0]}</h3>
+                <p>Price: ₹${splittedItem[1]}</p>
                 <button class="remove-item" data-name="${
-                  item.name
+                    splittedItem[0]
                 }">Remove</button>
             `;
       cartItems.appendChild(itemElement);
 
-      total += item.price * item.quantity;
+      total += parseInt(splittedItem[1].split("Rs.")[1]);
     });
 
     cartTotal.textContent = total.toFixed(2);
