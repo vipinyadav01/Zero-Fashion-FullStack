@@ -2,7 +2,8 @@
 
 :root {
   --primary-font: "Oswald", sans-serif;
-  --secondary-font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --secondary-font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
   --gradient-light: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
   --gradient-dark: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
 }
@@ -49,7 +50,7 @@ img {
 .head-of-offer {
   color: black;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 40px;
   font-family: "Stencil Std", fantasy;
   font-weight: bold;
   background: var(--gradient-light);
@@ -220,7 +221,6 @@ p {
 }
 
 @media (max-width: 1200px) {
-
   .index-offers-img,
   .index-grid-img-3 {
     grid-template-columns: repeat(3, 1fr);
@@ -228,7 +228,6 @@ p {
 }
 
 @media (max-width: 900px) {
-
   .index-offers-img,
   .index-grid-img-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -255,7 +254,6 @@ p {
 }
 
 @media (max-width: 600px) {
-
   .index-offers-img,
   .index-grid-img-3 {
     grid-template-columns: 1fr;
@@ -263,7 +261,6 @@ p {
 }
 
 @media screen and (max-width: 593px) {
-
   .footer-container h2,
   .footer-container p,
   .footer-container h5,
