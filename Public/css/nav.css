@@ -135,7 +135,12 @@ nav a:hover {
   }
 
   .nav-active {
-    transform: translateX(0%);
+    transform: translateX(-57%);
+    justify-content: flex-start;
+  }
+  .nav-links li{
+    opacity: 1;
+    margin-top: 0;
   }
 
   .nav-links li.fade-in {

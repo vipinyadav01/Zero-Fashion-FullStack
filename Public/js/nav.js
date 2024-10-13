@@ -18,44 +18,8 @@ const slides = [
 
 // Navigation logic
 function initNavigation() {
-  const navbar = document.querySelector(".navbar");
-  if (!navbar) {
-    console.error("Navbar element not found");
-    return;
-  }
-
-  // Create navbar HTML
-  navbar.innerHTML = `
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-logo">
-        <img src="path/to/your-logo.png" alt="Your Logo" class="h-8 w-auto">
-      </a>
-      <ul class="navbar-list"></ul>
-      <div class="navbar-icons">
-        <a href="cart.html" class="cart-icon" aria-label="View cart">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-        <a href="login.html" class="user-icon" aria-label="View profile">
-          <i class="fas fa-user"></i>
-        </a>
-      </div>
-      <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  `;
-
-  const navList = navbar.querySelector(".navbar-list");
-  navItems.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${item.href}">${item.label}</a>`;
-    navList.appendChild(li);
-  });
-
-  const burger = navbar.querySelector(".burger");
-  const nav = navbar.querySelector(".navbar-list");
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav-links");
 
   burger.addEventListener("click", () => {
     const isExpanded = nav.classList.toggle("nav-active");
@@ -74,13 +38,6 @@ function initSlider() {
 
   let currentSlide = 0;
   const interval = 3000; // 3 seconds
-
-  // Create slider HTML
-  sliderContainer.innerHTML = `
-    <div class="slides"></div>
-    <button class="prev" aria-label="Previous slide">&#10094;</button>
-    <button class="next" aria-label="Next slide">&#10095;</button>
-  `;
 
   const slidesContainer = sliderContainer.querySelector(".slides");
   slides.forEach((slide, index) => {
