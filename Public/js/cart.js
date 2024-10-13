@@ -10,29 +10,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (cart.length === 0) {
       cartItems.innerHTML = "<p>Your cart is empty.</p>";
-      cartTotal.textContent = "0.00";
+      cartTotal.textContent = "₹0.00";
       return;
     }
 
     let total = 0;
 
-    cart.forEach((item) => {
-      const splittedItem = item.split("||")
+    cart.forEach((item, index) => {
+      const [name, price] = item.split("||");
+      const priceValue = parseFloat(price.replace("Rs.", "").trim());
+
       const itemElement = document.createElement("div");
       itemElement.classList.add("cart-item");
       itemElement.innerHTML = `
-                <h3>${splittedItem[0]}</h3>
-                <p>Price: ₹${splittedItem[1]}</p>
-                <button class="remove-item" data-name="${
-                    splittedItem[0]
-                }">Remove</button>
-            `;
+        <h3>${name}</h3>
+        <p>Price: ${price}</p>
+        <button class="remove-item" data-index="${index}">Remove</button>
+      `;
       cartItems.appendChild(itemElement);
 
-      total += parseInt(splittedItem[1].split("Rs.")[1]);
+      total += priceValue;
     });
 
-    cartTotal.textContent = total.toFixed(2);
+    cartTotal.textContent = `₹${total.toFixed(2)}`;
   }
 
   function clearCart() {
@@ -40,21 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCart();
   }
 
+  function removeItemFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+
   clearCartButton.addEventListener("click", clearCart);
 
   cartItems.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-item")) {
-      const itemName = e.target.getAttribute("data-name");
-      removeItemFromCart(itemName);
-      loadCart();
+      const index = parseInt(e.target.getAttribute("data-index"), 10);
+      removeItemFromCart(index);
     }
   });
-
-  function removeItemFromCart(itemName) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter((item) => item.name !== itemName);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
 
   loadCart();
 });
