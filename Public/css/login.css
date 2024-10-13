@@ -1,10 +1,11 @@
 /* author: Shayan 
 https://codepen.io/shayanea/pen/eVMMgO*/
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
-html, body {
+html,
+body {
   position: relative;
   min-height: 100vh;
-  background-color: #E1E8EE;
+  background-color: #e1e8ee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +50,8 @@ html, body {
   -webkit-transform: translate(-50%, 0%);
   -webkit-transition: all 0.3s ease;
 }
-.form-structor .signup.slide-up .form-holder, .form-structor .signup.slide-up .submit-btn {
+.form-structor .signup.slide-up .form-holder,
+.form-structor .signup.slide-up .submit-btn {
   opacity: 0;
   visibility: hidden;
 }
@@ -193,7 +195,7 @@ html, body {
   color: rgba(0, 0, 0, 0.4);
 }
 .form-structor .login .center .submit-btn {
-  background-color: #6B92A4;
+  background-color: #6b92a4;
   color: rgba(255, 255, 255, 0.7);
   border: 0;
   border-radius: 15px;
@@ -221,7 +223,8 @@ html, body {
   -webkit-transform: translate(-50%, 0%);
   -webkit-transition: all 0.3s ease;
 }
-.form-structor .login.slide-up .form-holder, .form-structor .login.slide-up .submit-btn {
+.form-structor .login.slide-up .form-holder,
+.form-structor .login.slide-up .submit-btn {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s ease;
