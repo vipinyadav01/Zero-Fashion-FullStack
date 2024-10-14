@@ -278,11 +278,11 @@
         <div class="footer-2">
           <p><strong>USEFUL LINKS</strong></p>
           <ul>
-            <li><a href="contact.html">Contact Us</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="terms.html">T&C</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
           </ul>
           <p class="copyright">
             <a href="index.html">Copyright</a> &copy; 2024
@@ -302,7 +302,6 @@
     <script>
       const profile = document.querySelector(".profile");
       const profileData = document.querySelector(".profile__data");
-
       function fetchUserDetails() {
         let data = localStorage.getItem("user-info");
         if (!data) return;
@@ -310,9 +309,15 @@
         try {
           data = JSON.parse(data);
           profileData.innerHTML = `
-                      <p>Name: ${data.name}</p>
-                      <p>Email: ${data.email}</p>
-                  `;
+      <p>Name: ${data.name}</p>
+      <p>Email: ${data.email}</p>
+    `;
+
+          // Update profile image
+          const profileImage = document.querySelector(".profile img");
+          if (profileImage && data.imagePath) {
+            profileImage.src = data.imagePath;
+          }
         } catch (error) {
           console.error("Error parsing user data:", error);
         }
@@ -335,6 +340,7 @@
       });
     </script>
     <script src="js/login.js"></script>
+    <script src="js/cartcount.js"></script>
     <script src="js/nav.js"></script>
   </body>
 </html>

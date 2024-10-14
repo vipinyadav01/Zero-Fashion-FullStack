@@ -110,10 +110,26 @@ nav a:hover {
   transition: all var(--transition-speed) ease;
 }
 
-@media screen and (max-width: 768px) {
+/* Large screens */
+@media screen and (min-width: 1200px) {
+  /* Add styles for large screens here */
+}
+
+/* Medium screens */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  /* Add styles for medium screens here */
+}
+
+/* Small screens */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  /* Add styles for small screens here */
+}
+
+/* Extra small screens */
+@media screen and (max-width: 479px) {
   .nav-links {
     position: fixed;
-    right: -100%;
+    right: 0;
     height: calc(100vh - var(--header-height));
     top: var(--header-height);
     background-color: var(--background-color);
@@ -135,10 +151,11 @@ nav a:hover {
   }
 
   .nav-active {
-    transform: translateX(-57%);
+    transform: translateX(0);
     justify-content: flex-start;
   }
-  .nav-links li{
+
+  .nav-links li {
     opacity: 1;
     margin-top: 0;
   }
@@ -169,9 +186,7 @@ nav a:hover {
   .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
   }
-}
 
-@media screen and (max-width: 480px) {
   .logo h3 {
     font-size: 1.2rem;
   }

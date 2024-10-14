@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+
+      article {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Media queries */
+
+      /* Extra large screens (e.g., large desktops) */
+      @media only screen and (min-width: 1200px) {
+        body {
+          max-width: 1000px;
+        }
+      }
+
+      /* Large screens (e.g., desktops) */
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        body {
+          max-width: 900px;
+        }
+      }
+
+      /* Medium screens (e.g., laptops) */
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        body {
+          max-width: 700px;
+        }
+      }
+
+      /* Small screens (e.g., tablets) */
+      @media only screen and (min-width: 576px) and (max-width: 767px) {
+        body {
+          max-width: 500px;
+        }
+        article {
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+        }
+        h1,
+        h2 {
+          font-size: 1.1em;
+        }
+        p {
+          font-size: 0.95em;
+        }
+      }
+
+      /* Extra small screens (e.g., smartphones) */
+      @media only screen and (max-width: 575px) {
+        body {
+          max-width: 300px;
+          padding: 10px;
+        }
+        article {
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+        }
+        h1,
+        h2 {
+          font-size: 1em;
+        }
+        p {
+          font-size: 0.85em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Our Blog</h1>
+    </header>
+    <main>
+      <article>
+        <h2>New Product Launch: The Ultimate Gadget</h2>
+        <p>Published on: <time datetime="2023-06-01">June 1, 2023</time></p>
+        <p>
+          We're excited to announce the launch of our latest product, The
+          Ultimate Gadget. This innovative device combines the functionality
+          of...
+        </p>
+        <a href="#">Read more</a>
+      </article>
+      <article>
+        <h2>5 Tips for Sustainable Shopping</h2>
+        <p>Published on: <time datetime="2023-05-15">May 15, 2023</time></p>
+        <p>
+          As consumers become more environmentally conscious, sustainable
+          shopping practices are gaining popularity. Here are five tips to help
+          you shop more sustainably...
+        </p>
+        <a href="#">Read more</a>
+      </article>
+      <article>
+        <h2>Customer Spotlight: Jane's Success Story</h2>
+        <p>Published on: <time datetime="2023-05-01">May 1, 2023</time></p>
+        <p>
+          We love hearing from our customers about how our products have
+          impacted their lives. Today, we're featuring Jane, who used our
+          productivity tools to...
+        </p>
+        <a href="#">Read more</a>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2023 Zero-Fashion. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
