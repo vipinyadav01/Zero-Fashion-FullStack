@@ -106,7 +106,7 @@ nav a:hover {
 }
 
 /* Extra small screens */
-@media (max-width: 479px), (max-height: 599px) {
+@media (max-height: 599px), (orientation: portrait) {
   .nav-links {
     position: fixed;
     right: 0px;
