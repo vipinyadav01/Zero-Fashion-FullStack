@@ -105,8 +105,7 @@ nav a:hover {
   transition: all var(--transition-speed) ease;
 }
 
-/* Extra small screens */
-@media (max-height: 599px), (orientation: portrait) {
+@media screen and (max-width: 599px) {
   .nav-links {
     position: fixed;
     right: 0px;
@@ -144,17 +143,6 @@ nav a:hover {
     animation: navLinkFade 0.2s ease forwards;
   }
 
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
@@ -169,5 +157,16 @@ nav a:hover {
 
   .logo h3 {
     font-size: 1.2rem;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
