@@ -8,12 +8,6 @@
   --gradient-dark: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
 body {
   font-family: var(--primary-font);
   font-weight: bold;
@@ -32,8 +26,8 @@ img {
 .slider {
   position: relative;
   width: 100%;
-  height: 350px;
-  margin-top: 10vw;
+  height: 150px;
+  margin-top: 8vw;
   overflow: hidden;
 }
 
@@ -102,7 +96,7 @@ img {
 }
 
 .index-main-img {
-  padding-top: 120px;
+  padding-top: 60px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -111,7 +105,7 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin: 10px 20px 10px 30px;
+  margin: 10px 20px 10px 20px;
 }
 
 .index-offers-img a,
