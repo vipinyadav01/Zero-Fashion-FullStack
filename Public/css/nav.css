@@ -3,20 +3,8 @@
   --secondary-color: darkcyan;
   --text-color: #333;
   --background-color: #ffffff;
-  --header-height: 10vh;
+  --header-height: 8vh;
   --transition-speed: 0.4s;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Arial", sans-serif;
-  overflow-x: hidden;
-  color: var(--text-color);
 }
 
 nav {
@@ -47,6 +35,7 @@ nav a {
   border-radius: 4px;
   font-family: "Courier New", Courier, monospace;
   transition: color var(--transition-speed);
+  font-weight: bold;
 }
 
 nav ul li a {
@@ -86,11 +75,15 @@ nav a:hover {
   list-style: none;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 .nav-links li {
   margin-left: 20px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  list-style: none;
 }
 
 .nav-links li a:hover {
@@ -100,6 +93,8 @@ nav a:hover {
 .burger {
   display: none;
   cursor: pointer;
+  margin-right: 10px;
+  transition: color var(--transition-speed);
 }
 
 .burger div {
@@ -110,32 +105,17 @@ nav a:hover {
   transition: all var(--transition-speed) ease;
 }
 
-/* Large screens */
-@media screen and (min-width: 1200px) {
-  /* Add styles for large screens here */
-}
-
-/* Medium screens */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  /* Add styles for medium screens here */
-}
-
-/* Small screens */
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  /* Add styles for small screens here */
-}
-
 /* Extra small screens */
-@media screen and (max-width: 479px) {
+@media (max-width: 479px), (max-height: 599px), (orientation: landscape) {
   .nav-links {
     position: fixed;
-    right: 0;
+    right: 0px;
     height: calc(100vh - var(--header-height));
     top: var(--header-height);
     background-color: var(--background-color);
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 50%;
     transform: translateX(100%);
     transition: transform var(--transition-speed) ease-in-out;
   }
@@ -157,11 +137,11 @@ nav a:hover {
 
   .nav-links li {
     opacity: 1;
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .nav-links li.fade-in {
-    animation: navLinkFade 0.5s ease forwards;
+    animation: navLinkFade 0.2s ease forwards;
   }
 
   @keyframes navLinkFade {

@@ -20,176 +20,35 @@
       href="./images/Favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./images/Favicon/site.webmanifest" />
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/contact.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>ZERO FASHION - Contact Us</title>
-    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <!-- Custom CSS -->
-    <style>
-      :root {
-        --glass-bg: rgba(255, 255, 255, 0.25);
-        --glass-border: rgba(255, 255, 255, 0.18);
-        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        --text-color: #333;
-        --accent-color: #007bff;
-      }
-
-      body {
-        font-family: "Montserrat", sans-serif;
-        background: linear-gradient(
-          45deg,
-          #e1c9ca 0%,
-          #fad0c4 99%,
-          #fad0c4 100%
-        );
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-      }
-
-      .contact-container {
-        position: relative;
-        top: 80px;
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 30px;
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        border: 1px solid var(--glass-border);
-        box-shadow: var(--glass-shadow);
-      }
-
-      .slogan {
-        font-family: "Courier New", Courier, monospace;
-        color: var(--text-color);
-        font-size: 36px;
-        margin-bottom: 30px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .contact-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 30px;
-      }
-
-      .contact-item {
-        flex-basis: 48%;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        background: var(--glass-bg);
-        backdrop-filter: blur(5px);
-        border-radius: 10px;
-        padding: 15px;
-        transition: transform 0.3s ease;
-      }
-
-      .contact-item:hover {
-        transform: translateY(-5px);
-      }
-
-      .contact-item i {
-        font-size: 24px;
-        color: var(--accent-color);
-        margin-right: 15px;
-      }
-
-      .contact-item p {
-        font-weight: 500;
-        font-size: 16px;
-        color: var(--text-color);
-        margin: 0;
-      }
-
-      .social-links {
-        margin-top: 30px;
-        text-align: center;
-      }
-
-      .social-links a {
-        display: inline-block;
-        margin: 0 10px;
-        font-size: 24px;
-        color: var(--text-color);
-        transition: color 0.3s ease, transform 0.3s ease;
-      }
-
-      .social-links a:hover {
-        color: var(--accent-color);
-        transform: scale(1.2);
-      }
-
-      .nav-container {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-      }
-
-      .nav-button {
-        background: var(--glass-bg);
-        color: var(--text-color);
-        border: 1px solid var(--glass-border);
-        padding: 12px 24px;
-        font-size: 16px;
-        cursor: pointer;
-        backdrop-filter: blur(5px);
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        margin: 0 10px;
-      }
-
-      .nav-button:hover {
-        background: var(--accent-color);
-        color: white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      @media screen and (max-width: 768px) {
-        .contact-container {
-          padding: 20px;
-        }
-
-        .slogan {
-          font-size: 28px;
-        }
-
-        .contact-item {
-          flex-basis: 100%;
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .contact-container {
-          padding: 15px;
-        }
-
-        .slogan {
-          font-size: 24px;
-        }
-
-        .nav-button {
-          padding: 10px 20px;
-          font-size: 14px;
-        }
-      }
-    </style>
+    
   </head>
   <body>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="cart.html" id="cart">Cart</a></li>
+      <li class="profile">
+        <a href="profile-card.html">
+          <!-- <i class="fa-solid fa-bell"></i> -->
+          <img src="./images/user.png" width="40" alt="profile" />
+        </a>
+      </li>
+    </ul>
     <div class="contact-container">
       <h1 class="slogan">Get in Touch with Zero Fashion</h1>
       <div class="contact-info">
@@ -209,6 +68,15 @@
           <i class="fas fa-clock"></i>
           <p>Mon-Fri: 9am-4pm, Sat: 11am-6pm</p>
         </div>
+        <div class="email-card">
+          <h2>Send Us an Email</h2>
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+          </form>
+        </div>
       </div>
       <div class="social-links">
         <a href="https://www.twitter.com/vipinyadav9m" target="_blank"
@@ -222,28 +90,8 @@
         ></a>
         <p>&copy; 2024 Zero Fashion. All rights reserved.</p>
       </div>
-      <div class="nav-container">
-        <button class="nav-button" id="home-button">Home</button>
-        <button class="nav-button" id="category-button">Category</button>
-      </div>
-    </div>
-
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="./js/nav.js"></script>
-
-    <script>
-      document
-        .getElementById("home-button")
-        .addEventListener("click", function () {
-          window.location.href = "./index.html";
-        });
-
-      document
-        .getElementById("category-button")
-        .addEventListener("click", function () {
-          window.location.href = "./categories.html";
-        });
-    </script>
   </body>
 </html>

@@ -20,189 +20,16 @@
       sizes="16x16"
       href="./images/Favicon/favicon-16x16.png"
     />
-   
+
     <link rel="manifest" href="./images/Favicon/site.webmanifest" />
-   <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/profile-card.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
-    <style>
-      :root {
-        --primary-bg: #e0e5ec;
-        --text-primary: #2d3748;
-        --text-secondary: #718096;
-        --shadow-color: #a3b1c6;
-        --highlight-color: #ffffff;
-        --border-radius: 20px;
-      }
-
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: var(--primary-bg);
-        color: var(--text-primary);
-      }
-
-      .profile-card {
-        background-color: var(--primary-bg);
-        border-radius: var(--border-radius);
-        box-shadow: 20px 20px 60px var(--shadow-color),
-          -20px -20px 60px var(--highlight-color);
-        padding: 2rem;
-        width: 100%;
-        max-width: 350px;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-
-      .profile-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .profile-image-container {
-        width: 150px;
-        height: 150px;
-        margin: 1.5rem auto;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: inset 8px 8px 16px var(--shadow-color),
-          inset -8px -8px 16px var(--highlight-color);
-      }
-
-      .profile-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .profile-image:hover {
-        transform: scale(1.1);
-      }
-
-      .full-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-        color: var(--text-primary);
-      }
-
-      .email {
-        color: var(--text-secondary);
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
-      }
-
-      .upload-btn-wrapper {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-      }
-
-      .btn {
-        border: none;
-        color: var(--text-primary);
-        background-color: var(--primary-bg);
-        padding: 0.75rem 1.5rem;
-        border-radius: 50px;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 6px 6px 12px var(--shadow-color),
-          -6px -6px 12px var(--highlight-color);
-      }
-
-      .btn:hover {
-        box-shadow: inset 4px 4px 8px var(--shadow-color),
-          inset -4px -4px 8px var(--highlight-color);
-      }
-
-      .upload-btn-wrapper input[type="file"] {
-        font-size: 100px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        cursor: pointer;
-      }
-
-      /* Bootstrap-inspired utility classes */
-      .mt-3 {
-        margin-top: 1rem;
-      }
-      .mb-3 {
-        margin-bottom: 1rem;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .img-fluid {
-        max-width: 100%;
-        height: auto;
-      }
-
-      /* Media Queries */
-      @media screen and (min-width: 480px) {
-        .profile-card {
-          padding: 2.5rem;
-        }
-        .profile-image-container {
-          width: 160px;
-          height: 160px;
-        }
-        .full-name {
-          font-size: 1.75rem;
-        }
-        .email {
-          font-size: 1.1rem;
-        }
-      }
-
-      @media screen and (min-width: 768px) {
-        .profile-card {
-          padding: 3rem;
-          max-width: 400px;
-        }
-        .profile-image-container {
-          width: 180px;
-          height: 180px;
-        }
-        .full-name {
-          font-size: 2rem;
-        }
-        .email {
-          font-size: 1.2rem;
-        }
-      }
-
-      @media screen and (min-width: 1024px) {
-        .profile-card {
-          max-width: 450px;
-        }
-        .profile-image-container {
-          width: 200px;
-          height: 200px;
-        }
-        .full-name {
-          font-size: 2.25rem;
-        }
-        .email {
-          font-size: 1.3rem;
-        }
-        .btn {
-          padding: 1rem 2rem;
-          font-size: 1.1rem;
-        }
-      }
-    </style>
   </head>
   <body>
-     <!-- navbar -->
-     <nav>
+    <!-- navbar -->
+    <nav>
       <div class="logo">
         <img src="images/Favicon/favicon-32x32.png" alt="logo" />
         <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
@@ -212,8 +39,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="categories.html">Categories</a></li>
         <li><a href="products.html">Products</a></li>
-          <a href="login.html" id="login" data-link="./login.html">LogOut</a>
-        </li>
       </ul>
       <div class="burger">
         <div class="line1"></div>
@@ -223,8 +48,8 @@
     </nav>
     <!-- navbar -->
     <div class="profile-card">
-      <h2 class="full-name">John Doe</h2>
-      <p class="email">johndoe@example.com</p>
+      <h2 class="full-name">Zero-Fashion</h2>
+      <p class="email">Zero-Fashion@example.com</p>
       <div class="profile-image-container">
         <img
           src="/placeholder.svg?height=150&width=150"
@@ -233,95 +58,63 @@
         />
       </div>
       <div class="upload-btn-wrapper">
-        <button class="btn">Upload Photo</button>
+        <button class="btn">Upload</button>
         <input type="file" name="myfile" accept="image/*" id="fileInput" />
+        <button class="btn" id="logout-btn">Log Out</button>
       </div>
     </div>
-    <!-- <div class="profile__data toggle__view"></div> -->
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const profileImage = document.querySelector(".profile-image");
         const fileInput = document.getElementById("fileInput");
-        const fullName = document.querySelector(".full-name");
-        const email = document.querySelector(".email");
-        const profileData = document.querySelector(".profile__data");
+        const logoutBtn = document.getElementById("logout-btn");
+        const btn = document.querySelector(".btn");
 
-        // Load profile image from localStorage
-        const savedImage = localStorage.getItem("profileImage");
-        if (savedImage) {
-          profileImage.src = savedImage;
-        }
+        btn.addEventListener("click", () => {
+          fileInput.click();
+        });
+
+        // Load profile image from localStorage on page load
+        loadProfileImage();
 
         // Handle file upload
         fileInput.addEventListener("change", function (event) {
           const file = event.target.files[0];
+          console.log("sfsdfsf");
+
           if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
               profileImage.src = e.target.result;
+              // Save image to localStorage
               localStorage.setItem("profileImage", e.target.result);
             };
             reader.readAsDataURL(file);
           }
         });
 
-        // Fetch user details from localStorage
-        function fetchUserDetails() {
-          let data = localStorage.getItem("user-info");
-          if (data) {
-            try {
-              data = JSON.parse(data);
-              updateProfileDisplay(data);
-            } catch (error) {
-              console.error("Error parsing user data:", error);
-            }
+        // Logout functionality
+        logoutBtn.addEventListener("click", logout);
+
+        function loadProfileImage() {
+          const savedImage = localStorage.getItem("profileImage");
+          if (savedImage) {
+            profileImage.src = savedImage;
           }
         }
 
-        // Update profile display
-        function updateProfileDisplay(data) {
-          fullName.textContent = data.name;
-          email.textContent = data.email;
-          profileData.innerHTML = `
-            <p>Name: ${data.name}</p>
-            <p>Email: ${data.email}</p>
-          `;
+        function logout() {
+          // Clear the profile image from localStorage
+          localStorage.removeItem("profileImage");
+          // Reset the profile image to default
+          profileImage.src = "/placeholder.svg?height=150&width=150";
+          // Clear other user data if needed
+          localStorage.removeItem("user-info");
+          // Redirect to login page
+          window.location.href = "login.html";
         }
-
-        // Fetch profile data from API
-        function fetchProfileData() {
-          // This is a mock API call. Replace this with your actual API call if needed.
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              resolve({
-                name: "Jane Smith",
-                email: "janesmith@example.com",
-              });
-            }, 1000);
-          });
-        }
-
-        // Update profile data
-        function updateProfileData() {
-          fetchProfileData().then((data) => {
-            updateProfileDisplay(data);
-            localStorage.setItem("user-info", JSON.stringify(data));
-          });
-        }
-
-        // Initial fetch of user details
-        fetchUserDetails();
-
-        // If no user data in localStorage, fetch from API
-        if (!localStorage.getItem("user-info")) {
-          updateProfileData();
-        }
-
-        // Refresh profile data every 5 minutes
-        setInterval(updateProfileData, 5 * 60 * 1000);
       });
     </script>
-     <script src="./js/nav.js"></script>
+    <script src="./js/nav.js"></script>
   </body>
 </html>

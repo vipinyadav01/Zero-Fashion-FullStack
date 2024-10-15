@@ -1,101 +1,24 @@
-// Navigation items
-const navItems = [
-  { href: "profile.html", label: "Profile" },
-  { href: "index.html", label: "Home" },
-  { href: "categories.html", label: "Categories" },
-  { href: "products.html", label: "Products" },
-  { href: "cart.html", label: "Cart" },
-  { href: "contact.html", label: "Contact" },
-  { href: "orders.html", label: "Orders" },
-  { href: "logout.html", label: "Logout" },
-  { href: "login.html", label: "Login" },
-];
-
-// Slider items
-const slides = [
-  { id: 1, image: "images/si/si1.jpg", alt: "Slide 1" },
-  { id: 2, image: "images/si/si2.jpg", alt: "Slide 2" },
-  { id: 3, image: "images/si/si3.jpg", alt: "Slide 3" },
-];
-
-// Navigation logic
-function initNavigation() {
+document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links li");
 
   burger.addEventListener("click", () => {
-    const isExpanded = nav.classList.toggle("nav-active");
+    // Toggle Nav
+    nav.classList.toggle("nav-active");
+
+    // Animate Links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease-in-out forwards ${
+          index / 7 + 0.5
+        }s`;
+      }
+    });
+
+    // Burger Animation
     burger.classList.toggle("toggle");
-    burger.setAttribute("aria-expanded", isExpanded);
   });
-}
-
-// Slider logic
-function initSlider() {
-  const sliderContainer = document.querySelector(".slider");
-  if (!sliderContainer) {
-    console.error("Slider container not found");
-    return;
-  }
-
-  let currentSlide = 0;
-  const interval = 3000; // 3 seconds
-
-  const slidesContainer = sliderContainer.querySelector(".slides");
-  slides.forEach((slide, index) => {
-    const slideElement = document.createElement("div");
-    slideElement.className = "slide";
-    slideElement.style.display = index === 0 ? "block" : "none";
-    slideElement.innerHTML = `<img src="${slide.image}" alt="${slide.alt}">`;
-    slidesContainer.appendChild(slideElement);
-  });
-
-  function showSlide(index) {
-    const slideElements = slidesContainer.querySelectorAll(".slide");
-    slideElements[currentSlide].style.display = "none";
-    slideElements[index].style.display = "block";
-    currentSlide = index;
-  }
-
-  function nextSlide() {
-    showSlide((currentSlide + 1) % slides.length);
-  }
-
-  function prevSlide() {
-    showSlide((currentSlide - 1 + slides.length) % slides.length);
-  }
-
-  const nextButton = sliderContainer.querySelector(".next");
-  const prevButton = sliderContainer.querySelector(".prev");
-
-  nextButton.addEventListener("click", () => {
-    nextSlide();
-    resetInterval();
-  });
-
-  prevButton.addEventListener("click", () => {
-    prevSlide();
-    resetInterval();
-  });
-
-  let slideInterval = setInterval(nextSlide, interval);
-
-  function resetInterval() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, interval);
-  }
-
-  // Pause auto-advance on hover
-  sliderContainer.addEventListener("mouseenter", () =>
-    clearInterval(slideInterval)
-  );
-  sliderContainer.addEventListener("mouseleave", () => {
-    slideInterval = setInterval(nextSlide, interval);
-  });
-}
-
-// Initialize everything when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-  initNavigation();
-  initSlider();
 });

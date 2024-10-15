@@ -1,0 +1,265 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --text-color: #333;
+  --accent-color: #007bff;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(45deg, #e1c9ca 0%, #fad0c4 99%, #fad0c4 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-container {
+  position: relative;
+  top: 80px;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.slogan {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--text-color);
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  flex-basis: 48%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-right: 15px;
+}
+
+.contact-item p {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.social-links {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.nav-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  background: var(--glass-bg);
+  color: var(--text-color);
+  border: 1px solid var(--glass-border);
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.nav-button:hover {
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.email-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+  margin: 40px auto;
+}
+
+.email-card h2 {
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.email-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-card input,
+.email-card textarea {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  width: 100%;
+}
+
+.email-card input:focus,
+.email-card textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.email-card button {
+  background: var(--accent-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.email-card button:hover {
+  background: var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.email-card textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .slogan {
+    font-size: 28px;
+  }
+
+  .contact-item {
+    flex-basis: 100%;
+  }
+  .email-card {
+    padding: 20px;
+  }
+  .email-card h2 {
+    font-size: 20px;
+  }
+  .email-card input,
+  .email-card textarea {
+    padding: 10px;
+  }
+  .email-card button {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-container {
+    padding: 15px;
+  }
+
+  .slogan {
+    font-size: 24px;
+  }
+
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .email-card {
+    padding: 15px;
+  }
+  .email-card h2 {
+    font-size: 18px;
+  }
+  .email-card input,
+  .email-card textarea {
+    padding: 5px;
+  }
+  .email-card button {
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contact-container {
+    padding: 10px;
+  }
+  .slogan {
+    font-size: 20px;
+  }
+  .contact-item {
+    padding: 5px;
+  }
+  .contact-item i {
+    font-size: 18px;
+  }
+  .email-card {
+    padding: 10px;
+  }
+  .email-card h2 {
+    font-size: 16px;
+  }
+  .email-card input,
+  .email-card textarea {
+    padding: 5px;
+  }
+  .email-card button {
+    padding: 5px 10px;
+  }
+}

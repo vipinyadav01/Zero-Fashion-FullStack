@@ -37,8 +37,57 @@ img {
 }
 
 .slides {
-  display: flex;
+  display: none;
   margin-top: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.slide.active {
+  display: block;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider.animate .slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider.animate .slide.active {
+  transform: translateX(0);
+}
+
+.slider.animate .slide:not(.active) {
+  transform: translateX(-100%);
 }
 
 .slide img {

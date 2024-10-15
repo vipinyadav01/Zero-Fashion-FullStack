@@ -1,0 +1,189 @@
+:root {
+  --primary-bg: #e0e5ec;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --shadow-color: #a3b1c6;
+  --highlight-color: #ffffff;
+  --border-radius: 20px;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+.profile-card {
+  background-color: var(--primary-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 20px 20px 60px var(--shadow-color),
+    -20px -20px 60px var(--highlight-color);
+  padding: 2rem;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  margin: 1.5rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset 8px 8px 16px var(--shadow-color),
+    inset -8px -8px 16px var(--highlight-color);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.profile-image-container::after {
+  content: "ZF";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #888;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+.full-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.email {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn,
+#logout-btn {
+  position: relative;
+  margin: 10px 20px;
+  height: 50px;
+  width: 130px;
+  font-size: 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 6px #b8bec5, -3px -3px 6px #ffffff;
+}
+
+.btn:hover,
+#logout-btn:hover {
+  box-shadow: inset 4px 4px 8px var(--shadow-color),
+    inset -4px -4px 8px var(--highlight-color);
+}
+.upload-btn-wrapper input[type="file"] {
+  pointer-events: none;
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.mt-3 {
+  margin-top: 1rem;
+}
+.mb-3 {
+  margin-bottom: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media screen and (min-width: 480px) {
+  .profile-card {
+    padding: 2.5rem;
+  }
+  .profile-image-container {
+    width: 160px;
+    height: 160px;
+  }
+  .full-name {
+    font-size: 1.75rem;
+  }
+  .email {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .profile-card {
+    padding: 3rem;
+    max-width: 400px;
+  }
+  .profile-image-container {
+    width: 180px;
+    height: 180px;
+  }
+  .full-name {
+    font-size: 2rem;
+  }
+  .email {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile-card {
+    max-width: 450px;
+  }
+  .profile-image-container {
+    width: 200px;
+    height: 200px;
+  }
+  .full-name {
+    font-size: 2.25rem;
+  }
+  .email {
+    font-size: 1.3rem;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
