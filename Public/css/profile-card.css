@@ -53,7 +53,7 @@ body {
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-.profile-image-container::after {
+/* .profile-image-container::before {
   content: "ZF";
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@ body {
   position: absolute;
   width: 150px;
   height: 150px;
-}
+} */
 
 .profile-image:hover {
   transform: scale(1.1);
