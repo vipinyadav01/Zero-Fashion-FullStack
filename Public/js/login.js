@@ -44,7 +44,7 @@ loginBtn.addEventListener("click", async () => {
     },
     method: "POST",
     body: JSON.stringify({ email, password }),
-  });
+  }); // added closing parenthesis
 
   const data = await res.json();
 
@@ -79,7 +79,7 @@ signupBtn.addEventListener("click", async (e) => {
     },
     method: "POST",
     body: JSON.stringify({ email, password: pass, fullname }),
-  });
+  }); // added closing parenthesis
 
   const data = await res.json();
   localStorage.setItem(
