@@ -7,7 +7,6 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
   background: linear-gradient(45deg, #e1c9ca 0%, #fad0c4 99%, #fad0c4 100%);
   min-height: 100vh;
   display: flex;
@@ -69,52 +68,10 @@ body {
 
 .contact-item p {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
   color: var(--text-color);
   margin: 0;
-}
-
-.social-links {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.social-links a {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 24px;
-  color: var(--text-color);
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--accent-color);
-  transform: scale(1.2);
-}
-
-.nav-container {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-button {
-  background: var(--glass-bg);
-  color: var(--text-color);
-  border: 1px solid var(--glass-border);
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  margin: 0 10px;
-}
-
-.nav-button:hover {
-  background: var(--accent-color);
-  color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .email-card {
   background: var(--glass-bg);
@@ -179,6 +136,30 @@ body {
 .email-card textarea {
   height: 150px;
   resize: vertical;
+}
+label {
+  display: block;
+  float: left;
+  width: 130px;
+  text-align: left;
+  font-weight: bold;
+  color: var(--text-color);
+}
+label:after {
+  content: ": ";
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-container {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contact-container {
+    padding: 25px;
+  }
 }
 
 @media screen and (max-width: 768px) {

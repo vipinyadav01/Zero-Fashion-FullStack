@@ -24,25 +24,21 @@ Zero Fashion is a custom-built online clothing store showcasing the latest fashi
 ## 🛠️ Technologies
 
 - Frontend: HTML, CSS, JavaScript
-- Backend: Node.js
+- Backend: Node.js,Express.js
 - Database: MongoDB Atlas
 
 ## 🚀 Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/zero-fashion.git
+   git clone https://github.com/vipinyadav01/zero-fashion.git
    ```
-2. Navigate to the project directory:
-   ```
-   cd backend
-   ```
-3. Install dependencies:
+2. Install dependencies:
    ```
    npm install
    ```
-4. Set up your MongoDB Atlas connection string in `.env` file
-5. Start the server:
+3. Set up your MongoDB Atlas connection string in `.env` file
+4. Start the server:
    ```
    npm start
    ```
@@ -55,7 +51,7 @@ Here's a sneak peek of Zero Fashion:
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](#).
+Contributions, issues, and feature requests are welcome! Feel free to check(#).
 
 ## 📝 License
 
@@ -63,12 +59,12 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 ## 📞 Contact
 
-Vipin Yadav - [@vipinyadav9m](https://twitter.com/vipinyadav9m) - vipinyadav9m@gmail.com
+Vipin Yadav - [@vipinyadav9m](https://twitter.com/vipinyadav9m) - (vipinyadav9m@gmail.com)
 
-Project Link: [https://github.com/yourusername/zero-fashion](https://github.com/yourusername/zero-fashion)
+Project Link: [https://github.com/yourusername/zero-fashion](https://github.com/vipinyadav01/zero-fashion)
 
 ---
 
 <div align="center">
-  Made with ❤️ by [Vipin Yadav]
+  Made with ❤️ by Vipin Yadav
 </div>

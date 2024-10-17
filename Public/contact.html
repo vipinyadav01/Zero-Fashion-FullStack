@@ -2,6 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ZERO FASHION - Contact Us</title>
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -20,78 +29,88 @@
       href="./images/Favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./images/Favicon/site.webmanifest" />
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/contact.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ZERO FASHION - Contact Us</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    
   </head>
   <body>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="categories.html">Categories</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="cart.html" id="cart">Cart</a></li>
-      <li class="profile">
-        <a href="profile-card.html">
-          <!-- <i class="fa-solid fa-bell"></i> -->
-          <img src="./images/user.png" width="40" alt="profile" />
-        </a>
-      </li>
-    </ul>
-    <div class="contact-container">
+    <nav>
+      <div class="logo">
+        <img src="images/Favicon/favicon-32x32.png" alt="logo" />
+        <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">ContactUs</a></li>
+        <li><a href="cart.html" id="cart">Cart</a></li>
+        <li class="profile">
+          <a href="profile-card.html">
+            <i class="fa-solid fa-bell"></i>
+            <img src="./images/user.png" width="40" alt="profile" />
+          </a>
+        </li>
+      </ul>
+      <div class="burger" aria-label="Toggle navigation menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <main class="contact-container">
       <h1 class="slogan">Get in Touch with Zero Fashion</h1>
       <div class="contact-info">
         <div class="contact-item">
-          <i class="fas fa-envelope"></i>
+          <i class="icon-envelope"></i>
           <p>vipinyadav9m@gmail.com</p>
         </div>
         <div class="contact-item">
-          <i class="fas fa-phone"></i>
+          <i class="icon-phone"></i>
           <p>+91 9219658994</p>
         </div>
         <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <p>Deokali, Ghazipur, 233306 india</p>
+          <i class="icon-map-marker"></i>
+          <p>Ghazipur, 233306 India</p>
         </div>
         <div class="contact-item">
-          <i class="fas fa-clock"></i>
+          <i class="icon-clock"></i>
           <p>Mon-Fri: 9am-4pm, Sat: 11am-6pm</p>
         </div>
-        <div class="email-card">
-          <h2>Send Us an Email</h2>
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <textarea placeholder="Message"></textarea>
-            <button>Send</button>
-          </form>
-        </div>
       </div>
-      <div class="social-links">
-        <a href="https://www.twitter.com/vipinyadav9m" target="_blank"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="https://www.instagram.com" target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="https://www.linkedin.com/vipinyadav01" target="_blank"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <p>&copy; 2024 Zero Fashion. All rights reserved.</p>
+      <div class="email-card">
+        <h2>Send Us an Email</h2>
+        <form id="contact-form">
+          <label for="name" class="sr-only">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <label for="email" class="sr-only">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <label for="message" class="sr-only">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="./js/nav.js"></script>
+      <p>
+        &copy; <span id="current-year"></span> Zero Fashion. All rights
+        reserved.
+      </p>
+    </main>
+    <script src="js/nav.js"></script>
   </body>
 </html>

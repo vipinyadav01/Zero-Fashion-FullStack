@@ -33,13 +33,11 @@ nav a {
   font-size: 1.2rem;
   line-height: 25px;
   border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
-  transition: color var(--transition-speed);
-  font-weight: bold;
 }
 
 nav ul li a {
-  font-size: 0.87rem;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 nav a:hover {
