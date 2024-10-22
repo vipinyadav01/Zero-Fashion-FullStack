@@ -29,6 +29,17 @@
       href="./images/Favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./images/Favicon/site.webmanifest" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "pkUX04LW-xpS5P2H6",
+        });
+      })();
+    </script>
   </head>
   <body>
     <nav>
@@ -41,7 +52,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="categories.html">Categories</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">ContactUs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
         <li><a href="cart.html" id="cart">Cart</a></li>
         <li class="profile">
           <a href="profile-card.html">
@@ -59,51 +70,84 @@
 
     <main class="contact-container">
       <h1 class="slogan">Get in Touch with Zero Fashion</h1>
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="icon-envelope"></i>
-          <p>vipinyadav9m@gmail.com</p>
-        </div>
-        <div class="contact-item">
-          <i class="icon-phone"></i>
-          <p>+91 9219658994</p>
-        </div>
-        <div class="contact-item">
-          <i class="icon-map-marker"></i>
-          <p>Ghazipur, 233306 India</p>
-        </div>
-        <div class="contact-item">
-          <i class="icon-clock"></i>
-          <p>Mon-Fri: 9am-4pm, Sat: 11am-6pm</p>
-        </div>
-      </div>
       <div class="email-card">
-        <h2>Send Us an Email</h2>
+        <h2>Send Us a Message</h2>
         <form id="contact-form">
-          <label for="name" class="sr-only">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-          />
-          <label for="email" class="sr-only">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <label for="message" class="sr-only">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Message"
-            required
-          ></textarea>
-          <button type="submit">Send</button>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName" class="sr-only">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="sr-only">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone" class="sr-only">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone Number"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="company" class="sr-only">Company</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="Company"
+            />
+          </div>
+          <div class="form-group">
+            <label for="subject" class="sr-only">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Support</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" class="sr-only">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter a message"
+              required
+            ></textarea>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="newsletter" name="newsletter" />
+            <label for="newsletter">Subscribe to our newsletter</label>
+          </div>
+          <button type="submit">SEND MESSAGE</button>
         </form>
       </div>
       <p>
@@ -111,6 +155,9 @@
         reserved.
       </p>
     </main>
+
+    <script src="js/cartcount.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>

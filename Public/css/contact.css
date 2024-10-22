@@ -1,246 +1,165 @@
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  --text-color: #333;
-  --accent-color: #007bff;
+  --text-color: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --input-border: 1px solid rgba(255, 255, 255, 0.3);
+  --button-bg: #ffffff;
+  --button-text: #000000;
 }
 
 body {
-  background: linear-gradient(45deg, #e1c9ca 0%, #fad0c4 99%, #fad0c4 100%);
+  font-family: "Montserrat", sans-serif;
+  background-color: #000000;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
 }
 
 .contact-container {
-  position: relative;
-  top: 80px;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 30px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  border: 2px solid white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 80px auto 0;
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .slogan {
-  font-family: "Courier New", Courier, monospace;
-  color: var(--text-color);
-  font-size: 36px;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.contact-item {
-  flex-basis: 48%;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: var(--glass-bg);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  padding: 15px;
-  transition: transform 0.3s ease;
-}
-
-.contact-item:hover {
-  transform: translateY(-5px);
-}
-
-.contact-item i {
   font-size: 24px;
-  color: var(--accent-color);
-  margin-right: 15px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h1,
+h2,
+label {
+  color: #ffffff;
 }
 
-.contact-item p {
-  font-weight: 500;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--text-color);
-  margin: 0;
-}
 .email-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  padding: 30px;
-  margin-bottom: 30px;
-  width: 80%;
-  margin: 40px auto;
+  background-color: transparent;
 }
 
 .email-card h2 {
-  font-size: 24px;
-  color: var(--text-color);
+  font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.email-card form {
+#contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
 }
 
-.email-card input,
-.email-card textarea {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  color: var(--text-color);
-  background: var(--glass-bg);
-  backdrop-filter: blur(5px);
-  width: 100%;
+.form-row {
+  display: flex;
+  gap: 20px;
 }
 
-.email-card input:focus,
-.email-card textarea:focus {
-  outline: none;
-  box-shadow: 0 0 10px var(--accent-color);
+.form-group {
+  flex: 1;
 }
 
-.email-card button {
-  background: var(--accent-color);
+#contact-form input,
+#contact-form textarea,
+#contact-form select {
+  background-color: var(--input-bg);
+  border: var(--input-border);
   color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 30px;
+  padding: 10px;
   font-size: 16px;
-  cursor: pointer;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.email-card button:hover {
-  background: var(--accent-color);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+  color: rgba(198, 191, 191, 0.7);
 }
 
-.email-card textarea {
-  height: 150px;
+#contact-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white'%3E%3Cpath d='M10.293 3.293 6 7.586 1.707 3.293A1 1 0 0 0 .293 4.707l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 1 0-1.414-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+#contact-form textarea {
+  min-height: 100px;
   resize: vertical;
 }
-label {
-  display: block;
-  float: left;
-  width: 130px;
-  text-align: left;
+
+#contact-form button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px;
+  font-size: 18px;
   font-weight: bold;
-  color: var(--text-color);
-}
-label:after {
-  content: ": ";
-  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 1024px) {
+#contact-form button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
   .contact-container {
-    padding: 30px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .contact-container {
-    padding: 25px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .contact-container {
-    padding: 20px;
-  }
-
-  .slogan {
-    font-size: 28px;
-  }
-
-  .contact-item {
-    flex-basis: 100%;
-  }
-  .email-card {
-    padding: 20px;
-  }
-  .email-card h2 {
-    font-size: 20px;
-  }
-  .email-card input,
-  .email-card textarea {
     padding: 10px;
   }
-  .email-card button {
-    padding: 10px 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .contact-container {
-    padding: 15px;
-  }
 
   .slogan {
-    font-size: 24px;
+    font-size: 20px;
   }
 
-  .nav-button {
-    padding: 10px 20px;
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #contact-form input,
+  #contact-form textarea,
+  #contact-form select {
     font-size: 14px;
   }
-  .email-card {
-    padding: 15px;
-  }
-  .email-card h2 {
-    font-size: 18px;
-  }
-  .email-card input,
-  .email-card textarea {
-    padding: 5px;
-  }
-  .email-card button {
-    padding: 5px 10px;
-  }
-}
 
-@media screen and (max-width: 320px) {
-  .contact-container {
-    padding: 10px;
-  }
-  .slogan {
-    font-size: 20px;
-  }
-  .contact-item {
-    padding: 5px;
-  }
-  .contact-item i {
-    font-size: 18px;
-  }
-  .email-card {
-    padding: 10px;
-  }
-  .email-card h2 {
+  #contact-form button {
     font-size: 16px;
-  }
-  .email-card input,
-  .email-card textarea {
-    padding: 5px;
-  }
-  .email-card button {
-    padding: 5px 10px;
   }
 }
