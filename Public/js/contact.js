@@ -14,8 +14,8 @@ function sendEmail(event) {
   var message = document.getElementById("message").value;
   var newsletter = document.getElementById("newsletter").checked;
 
-  var templateParams = {
-    from_name: firstName + " " + lastName,
+  const templateParams = {
+    from_name: `${firstName} ${lastName}`,
     from_email: email,
     phone: phone,
     company: company,
@@ -24,7 +24,27 @@ function sendEmail(event) {
     newsletter: newsletter ? "Yes" : "No",
   };
 
-  emailjs.send("service_uc32txs", "template_1lcmxvw", templateParams).then(
+  const emailTemplate = `
+Hello,
+
+You got a new message from ${templateParams.from_name}:
+
+Name : ${templateParams.from_name}
+
+Email Id : ${templateParams.from_email}
+
+Phone Number : ${templateParams.phone}
+
+Company : ${templateParams.company}
+
+Subject : ${templateParams.subject}
+
+Message : ${templateParams.message}
+
+Newsletter : ${templateParams.newsletter}
+`;
+
+  emailjs.send("service_id", "template_id", templateParams).then(
     function (response) {
       console.log("SUCCESS!", response.status, response.text);
       alert("Your message has been sent successfully!");
