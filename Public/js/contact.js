@@ -24,7 +24,7 @@ function sendEmail(event) {
     newsletter: newsletter ? "Yes" : "No",
   };
 
-  emailjs.send("service_id", "template_id", templateParams).then(
+  emailjs.send("pkUX04LW-xpS5P2H6", "template_1lcmxvw", templateParams).then(
     function (response) {
       console.log("SUCCESS!", response.status, response.text);
       alert("Your message has been sent successfully!");
