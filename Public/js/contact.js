@@ -24,26 +24,6 @@ function sendEmail(event) {
     newsletter: newsletter ? "Yes" : "No",
   };
 
-  const emailTemplate = `
-Hello,
-
-You got a new message from ${templateParams.from_name}:
-
-Name : ${templateParams.from_name}
-
-Email Id : ${templateParams.from_email}
-
-Phone Number : ${templateParams.phone}
-
-Company : ${templateParams.company}
-
-Subject : ${templateParams.subject}
-
-Message : ${templateParams.message}
-
-Newsletter : ${templateParams.newsletter}
-`;
-
   emailjs.send("service_id", "template_id", templateParams).then(
     function (response) {
       console.log("SUCCESS!", response.status, response.text);
