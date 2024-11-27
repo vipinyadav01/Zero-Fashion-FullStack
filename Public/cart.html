@@ -25,7 +25,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/style_index.css" />
     <link rel="stylesheet" href="css/cart.css" />
     <link
       rel="stylesheet"
@@ -43,11 +42,16 @@
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
         <li><a href="categories.html">Categories</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="contact.html">ContactUs</a></li>
-        <li>
-          <a href="login.html" id="login" data-link="./login.html">LogOut</a>
+        <li><a href="cart.html" id="cart">Cart</a></li>
+
+        <li class="profile">
+          <a href="profile-card.html">
+            <!-- <i class="fa-solid fa-bell"></i> -->
+            <img src="./images/user.png" width="40" alt="profile" />
+          </a>
         </li>
       </ul>
       <div class="burger">
@@ -57,15 +61,19 @@
       </div>
     </nav>
 
-    <h1 class="headingCart">Your Shopping Cart</h1>
-    <div id="cart-items">
-      <!-- Cart items will be dynamically added here -->
-    </div>
+    <h1 class="headingCart">Shopping Cart</h1>
+    <div id="cart-items"></div>
     <div id="cart-summary">
-      <p>Total: $<span id="cart-total">0.00</span></p>
+      <p>Total:<span id="cart-total">0.00</span></p>
     </div>
     <button id="clear-cart">Clear Cart</button>
+<<<<<<< HEAD
     <button id="checkout-button">Proceed to Checkout</button>
+=======
+    <button id="checkout-button">
+      <a href="checkout.html"> Proceed to Checkout </a>
+    </button>
+>>>>>>> b0e5543b71240a8afd6ddcb7e045ed32c8948056
 
     <script src="js/cartcount.js"></script>
     <script src="js/nav.js"></script>

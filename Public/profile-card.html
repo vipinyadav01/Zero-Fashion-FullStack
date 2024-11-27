@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/Favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/Favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/profile-card.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div class="logo">
+        <img src="images/Favicon/favicon-32x32.png" alt="logo" />
+        <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="products.html">Products</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <div class="profile-card">
+      <h2 class="full-name">Zero-Fashion</h2>
+      <p class="email">Zero-Fashion@example.com</p>
+      <div class="profile-image-container">
+        <img
+          src="/placeholder.svg?height=150&width=150"
+          alt="Profile Picture"
+          class="profile-image"
+        />
+      </div>
+      <div class="upload-btn-wrapper">
+        <button class="btn">Upload</button>
+        <input type="file" name="myfile" accept="image/*" id="fileInput" />
+        <button class="btn" id="logout-btn">Log Out</button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const profileImage = document.querySelector(".profile-image");
+        const fileInput = document.getElementById("fileInput");
+        const logoutBtn = document.getElementById("logout-btn");
+        const btn = document.querySelector(".btn");
+        const fullname = document.querySelector(".full-name");
+        const email =  document.querySelector(".email")
+
+        let userInfo = localStorage.getItem("user-info");
+        if(userInfo){
+          userInfo = JSON.parse(userInfo);
+          fullname.textContent = userInfo.name;
+          email.textContent = userInfo.email
+        }
+
+
+        btn.addEventListener("click", () => {
+          fileInput.click();
+        });
+
+        // Load profile image from localStorage on page load
+        loadProfileImage();
+
+        // Handle file upload
+        fileInput.addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          console.log("sfsdfsf");
+
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              profileImage.src = e.target.result;
+              // Save image to localStorage
+              localStorage.setItem("profileImage", e.target.result);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+
+        // Logout functionality
+        logoutBtn.addEventListener("click", logout);
+
+        function loadProfileImage() {
+          const savedImage = localStorage.getItem("profileImage");
+          if (savedImage) {
+            profileImage.src = savedImage;
+          }
+        }
+
+        function logout() {
+          // Clear the profile image from localStorage
+          localStorage.removeItem("profileImage");
+          // Reset the profile image to default
+          profileImage.src = "/placeholder.svg?height=150&width=150";
+          // Clear other user data if needed
+          localStorage.removeItem("user-info");
+          // Redirect to login page
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+    <script src="./js/nav.js"></script>
+  </body>
+</html>

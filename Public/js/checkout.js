@@ -3,18 +3,18 @@ let totalCount = document.querySelector(".totalCount");
 
 function loadCart() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  console.log(totalCount);
+  let total =0;
+  cart.forEach((item) => {
+    const splittedItem = item.split("||")
+    total += parseInt(splittedItem[1].split("Rs.")[1]);
+  });
 
   totalCount.textContent = `Product Name x ${cart.length}(Qty)`;
 
-  let total = 0;
-
-  cart.forEach((item) => {
-    total += item.price * item.quantity;
-  });
-
   totalAmout.forEach((amount) => {
-    amount.textContent = `$ ${total}`;
+    console.log(amount);
+    
+    amount.textContent = `₹ ${total}`;
   });
 }
 document.addEventListener("DOMContentLoaded", function () {

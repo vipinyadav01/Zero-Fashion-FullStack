@@ -6,35 +6,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log("Cart data:", cart);
 
     cartItems.innerHTML = "";
 
     if (cart.length === 0) {
       cartItems.innerHTML = "<p>Your cart is empty.</p>";
-      cartTotal.textContent = "0.00";
+      cartTotal.textContent = "₹0.00";
       return;
     }
 
     let total = 0;
 
-    cart.forEach((item) => {
+    cart.forEach((item, index) => {
+      const [name, price] = item.split("||");
+      const priceValue = parseFloat(price.replace("Rs.", "").trim());
+
       const itemElement = document.createElement("div");
       itemElement.classList.add("cart-item");
       itemElement.innerHTML = `
-                <h3>${item.name}</h3>
-                <p>Price: $${item.price.toFixed(2)}</p>
-                <p>Quantity: ${item.quantity}</p>
-                <button class="remove-item" data-name="${
-                  item.name
-                }">Remove</button>
-            `;
+        <h3>${name}</h3>
+        <p>Price: ${price}</p>
+        <button class="remove-item" data-index="${index}">Remove</button>
+      `;
       cartItems.appendChild(itemElement);
 
-      total += item.price * item.quantity;
+      total += priceValue;
     });
 
-    cartTotal.textContent = total.toFixed(2);
+    cartTotal.textContent = `₹${total.toFixed(2)}`;
   }
 
   function clearCart() {
@@ -42,28 +41,30 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCart();
   }
 
-  clearCartButton.addEventListener("click", clearCart);
+  function removeItemFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
 
+<<<<<<< HEAD
   checkoutButton.addEventListener("click", () => {
     //Remove the alert
     // alert('Proceeding to checkout...');
     // Redirect to the checkout page
     window.location.href = "checkout.html"; // Replace with your actual checkout page URL
   });
+=======
+  clearCartButton.addEventListener("click", clearCart);
+>>>>>>> b0e5543b71240a8afd6ddcb7e045ed32c8948056
 
   cartItems.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-item")) {
-      const itemName = e.target.getAttribute("data-name");
-      removeItemFromCart(itemName);
-      loadCart();
+      const index = parseInt(e.target.getAttribute("data-index"), 10);
+      removeItemFromCart(index);
     }
   });
-
-  function removeItemFromCart(itemName) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter((item) => item.name !== itemName);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
 
   loadCart();
 });

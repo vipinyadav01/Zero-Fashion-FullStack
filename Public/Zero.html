@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="apple-touch-icon" sizes="180x180"
-      href="./images/Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-      href="./images/Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-      href="./images/Favicon/favicon-16x16.png">
-    <link rel="manifest" href="./images/Favicon/site.webmanifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/Favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/Favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZERO</title>
-    <link rel="stylesheet" href="css/style_index.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style_index.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/Zero.css" />
     <!-- Add other necessary stylesheets -->
   </head>
   <body>
     <!-- navbar -->
     <nav>
       <div class="logo">
-        <img src="images/Favicon/favicon-32x32.png" alt="logo">
+        <img src="images/Favicon/favicon-32x32.png" alt="logo" />
         <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
       </div>
 
@@ -29,7 +41,11 @@
         <li><a href="categories.html">Categories</a></li>
         <li><a href="contact.html">ContactUs</a></li>
         <li><a href="cart.html" id="cart">Cart</a></li>
-        <li><a href="login.html" id="login" data-link="./login.html">LogOut</a>
+        <li class="profile">
+          <a href="profile-card.html">
+            <i class="fa-solid fa-bell"></i>
+            <img src="./images/user.png" width="40" alt="profile" />
+          </a>
         </li>
       </ul>
       <div class="burger">
@@ -99,14 +115,14 @@
 
     <script>
       // Add this script to handle redirection after login
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Check if the user just logged in (you might need to adjust this logic based on your auth system)
-        const justLoggedIn = sessionStorage.getItem('justLoggedIn');
+        const justLoggedIn = sessionStorage.getItem("justLoggedIn");
         if (justLoggedIn) {
           // Clear the flag
-          sessionStorage.removeItem('justLoggedIn');
+          sessionStorage.removeItem("justLoggedIn");
           // Redirect to Zero.html
-          window.location.href = 'Zero.html';
+          window.location.href = "Zero.html";
         }
       });
     </script>

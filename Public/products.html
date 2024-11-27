@@ -2,51 +2,68 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180"
-      href="./images/Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-      href="./images/Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-      href="./images/Favicon/favicon-16x16.png">
-    <link rel="manifest" href="./images/Favicon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/Favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/Favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Products</title>
     <link
       href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Nova+Cut|Nova+Script&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/products.css" />
     <link rel="stylesheet" href="css/categories.css" />
     <link rel="stylesheet" href="css/nav.css" />
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
     <!-- navbar -->
     <nav>
       <div class="logo">
-        <img src="images/Favicon/favicon-32x32.png" alt="Logo Icon"
-        <h3></h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
+        <img src="images/Favicon/favicon-32x32.png" alt="Logo Icon" />
+        <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
       </div>
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
         <li><a href="categories.html">Categories</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="contact.html">ContactUs</a></li>
         <li><a href="cart.html" id="cart">Cart</a></li>
-        <li><a href="login.html" id="login"
-            data-link="./login.html">LogOut</a></li>
-
+        <li class="profile">
+          <a href="profile-card.html">
+            <i class="fa-solid fa-bell"></i>
+            <img src="./images/user.png" width="40" alt="profile" />
+          </a>
+        </li>
       </ul>
       <div class="burger">
         <div class="line1"></div>
@@ -55,163 +72,578 @@
       </div>
     </nav>
     <!-- navbar -->
-    <h2 class="main-head-of-products">Everyone Has A Style Statment<br>
+    <h2 class="main-head-of-products">
+      Everyone Has A Style Statement<br />
       <span class="colored-word-bigger-size">FIND YOURS HERE!</span>
     </h2>
 
-    <br>
+    <br />
     <div class="bg-images">
       <img
-          src="images/products-img/marcus-loke-xXJ6utyoSw0-unsplash (1).jpg"
-           id="AJS  Kurta with Plazzzo & Dupatta || Rs.1099"onclick="add(this.id)">
+        src="images/products-img/marcus-loke-xXJ6utyoSw0-unsplash (1).jpg"
+        alt="Banner Image"
+      />
     </div>
 
-    <center><p class="msg-ps">
-        <span class="colored-word">Click</span> on the product to add in
-        your shopping list.
-        <br>Go below and check <span class="colored-word">YOUR CART</span>
-        for details.
-      </p></center>
+    <p class="msg-ps">
+      <span class="colored-word">Click</span> on the product to add in your
+      shopping list. <br />Go below and check
+      <span class="colored-word">YOUR CART</span> for details.
+    </p>
 
     <div class="first">
       <div>
         <h1>For <span class="colored-word">Her</span></h1>
-        <center><hr class="products-hr"></center>
-        <br><br>
+        <hr class="products-hr" />
+        <br /><br />
 
         <div class="kurti">
-            <img src="images/products-img/women/kurti1.png"
-            id="AKS  Kurta with Plazzzo & Dupatta || Rs.1799"onclick="add(this.id)">
+          <div class="product-item">
+            <img
+              src="images/products-img/women/kurti1.png"
+              alt="AKS Kurta with Plazzzo & Dupatta"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="AKS Kurta with Plazzzo & Dupatta || Rs.1799"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/kurti2.png"
+              alt="Nayo Women Solid Kurta with Trouser"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Nayo Women Solid Kurta with Trouser || Rs.1649"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/kurti3.png"
+              alt="AKS Printed Straight Kurta"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="AKS Printed Straight Kurta || Rs.659"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/kurti4.png"
+              alt="Fabindia Slim Fit Straight Kurta"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Fabindia Slim Fit Straight Kurta || Rs.1990"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
 
-          <img src="images/products-img/women/kurti2.png"
-            id="Nayo Women Solid Kurta with Trouser || Rs.1649"" alt=""
-            onclick="add(this.id)" >
-          <img src="images/products-img/women/kurti3.png"
-            id="AKS Printed Staight Kurta || Rs.659" alt
-            onclick="add(this.id)" >
-          <img src="images/products-img/women/kurti4.png"
-            id="Fabindia Slim Fit Straight Kurta || Rs.1990" alt
-            onclick="add(this.id)" >
-        </div>
         <div class="western">
-          <img src="images/products-img/women/western1.png"
-            id="Ives Solid Shirt Style Top || Rs.549" alt
-            onclick="add(this.id)" >
-          <img src="images/products-img/women/western2.png"
-            id="Style Quotient Solid Top || Rs.554" alt
-            onclick="add(this.id)" >
-          <img src="images/products-img/women/western3.png"
-            id="HERE&NOW Printed A-Line Top || Rs.549" alt
-            onclick="add(this.id)" >
-          <img src="images/products-img/women/western4.png"
-            id="SASSAFRAS Ruffled Shirt Style Top || Rs. 549" alt
-            onclick="add(this.id)" >
+          <div class="product-item">
+            <img
+              src="images/products-img/women/western1.png"
+              alt="Ives Solid Shirt Style Top"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Ives Solid Shirt Style Top || Rs.549"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/western2.png"
+              alt="Style Quotient Solid Top"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Style Quotient Solid Top || Rs.554"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/western3.png"
+              alt="HERE&NOW Printed A-Line Top"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="HERE&NOW Printed A-Line Top || Rs.549"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/western4.png"
+              alt="SASSAFRAS Ruffled Shirt Style Top"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="SASSAFRAS Ruffled Shirt Style Top || Rs.549"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
+
         <div class="g-shoes">
-          <img src="images/products-img/women/g-shoe1.png"
-            id=" PUMA Women LQDCell || Rs.6999" alt  onclick="add(this.id)">
-          <img src="images/products-img/women/g-shoe2.png"
-            id="ADIDAS Women Ultraboost19 Running || Rs.11899" alt onclick="add(this.id)"
-            >
-          <img src="images/products-img/women/g-shoe3.png"
-            id="HRX Women Abslute Run  || Rs.1549" alt onclick="add(this.id)" >
-          <img src="images/products-img/women/g-shoe4.png"
-            id="Skercher Women GO RUN  || Rs.3249" alt onclick="add(this.id)">
+          <div class="product-item">
+            <img
+              src="images/products-img/women/g-shoe1.png"
+              alt="PUMA Women LQDCell"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="PUMA Women LQDCell || Rs.6999"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/g-shoe2.png"
+              alt="ADIDAS Women Ultraboost19 Running"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="ADIDAS Women Ultraboost19 Running || Rs.11899"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/g-shoe3.png"
+              alt="HRX Women Absolute Run"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="HRX Women Absolute Run || Rs.1549"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/g-shoe4.png"
+              alt="Skechers Women GO RUN"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Skechers Women GO RUN || Rs.3249"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
+
         <div class="heels">
-          <img src="images/products-img/women/heels1.png"
-            id="Shetopia Women Heels || Rs.499" alt onclick="add(this.id)">
-          <img src="images/products-img/women/heels2.png"
-            id="ZAPATOZ Women Heeled Boots || Rs.527" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/women/heels3.png"
-            id="Allen Solly Women Solid Wedged || Rs.2499" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/women/heels4.png"
-            id="Shoetopia Women Heels || Rs.499" alt >
+          <div class="product-item">
+            <img
+              src="images/products-img/women/heels1.png"
+              alt="Shoetopia Women Heels"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Shoetopia Women Heels || Rs.499"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/heels2.png"
+              alt="ZAPATOZ Women Heeled Boots"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="ZAPATOZ Women Heeled Boots || Rs.527"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/heels3.png"
+              alt="Allen Solly Women Solid Wedged"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Allen Solly Women Solid Wedged || Rs.2499"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/women/heels4.png"
+              alt="Shoetopia Women Heels"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Shoetopia Women Heels || Rs.499"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="Second">
         <h1>For <span class="colored-word">Him</span></h1>
-        <center><hr class="products-hr"></center>
-        <br><br>
+        <hr class="products-hr" />
+        <br /><br />
 
         <div class="shirts">
-          <img src="images/products-img/men/shirt1.png"
-            id="Difference of Opinion Printed Shirt || Rs.449" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/men/shirt2.png"
-            id="Moda Rapido Printed Round Neck T-shirt || Rs.486" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/men/shirt3.png"
-            id="DILLINGER Colourblocked Round Neck T-shirt || Rs.404" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/men/shirt4.png"
-            id="Roadster T-shirt with Shoulder patch || Rs.519" alt
-            onclick="add(this.id)">
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shirt1.png"
+              alt="Difference of Opinion Printed Shirt"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Difference of Opinion Printed Shirt || Rs.449"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shirt2.png"
+              alt="Moda Rapido Printed Round Neck T-shirt"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Moda Rapido Printed Round Neck T-shirt || Rs.486"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shirt3.png"
+              alt="DILLINGER Colourblocked Round Neck T-shirt"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="DILLINGER Colourblocked Round Neck T-shirt || Rs.404"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shirt4.png"
+              alt="Roadster T-shirt with Shoulder patch"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Roadster T-shirt with Shoulder patch || Rs.519"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
+
         <div class="jeans">
-          <img src="images/products-img/men/jeans1.png"
-            id="HIGHLANDER Men Slim Fit Jeans || Rs.874" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/men/jeans2.png"
-            id="Roadster Men Super Skinny Fit Jeans || Rs.1199" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/men/jeans3.png"
-            id="Calvin Klein Jeans Mean Slim Straight Jeans || Rs.9599" alt
-            onclick="add(this.id)">
-          <img src="images/products-img/men/jeans4.png"
-            id="LOCOMOTIVE Mean Slim Fit Jeans || Rs.999" alt
-            onclick="add(this.id)">
+          <div class="product-item">
+            <img
+              src="images/products-img/men/jeans1.png"
+              alt="HIGHLANDER Men Slim Fit Jeans"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="HIGHLANDER Men Slim Fit Jeans || Rs.874"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/jeans2.png"
+              alt="Roadster Men Super Skinny Fit Jeans"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Roadster Men Super Skinny Fit Jeans || Rs.1199"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/jeans3.png"
+              alt="Calvin Klein Jeans Men Slim Straight Jeans"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Calvin Klein Jeans Men Slim Straight Jeans || Rs.9599"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/jeans4.png"
+              alt="LOCOMOTIVE Men Slim Fit Jeans"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="LOCOMOTIVE Men Slim Fit Jeans || Rs.999"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="joggers">
+          <div class="product-item">
+            <img
+              src="images/products-img/men/joggers1.png"
+              alt="HRX Men Solid Joggers"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="HRX Men Solid Joggers || Rs.934"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/joggers2.png"
+              alt="SNITCH Men Loose Fit"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="SNITCH Men Loose Fit || Rs.1499"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/joggers3.png"
+              alt="PUMA Men Zipper"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="PUMA Men Zipper || Rs.854"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/joggers4.png"
+              alt="The INGCO Men Chinos"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="The INGCO Men Chinos || Rs.652"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shoes">
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shoe1.png"
+              alt="PUMA Men Clasp IDP Sneakers"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="PUMA Men Clasp IDP Sneakers || Rs.1304"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shoe2.png"
+              alt="Levis Men Sneakers"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Levis Men Sneakers || Rs.1169"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shoe3.png"
+              alt="Mactree Men Sneakers"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="Mactree Men Sneakers || Rs.679"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img
+              src="images/products-img/men/shoe4.png"
+              alt="HRX Men Pro Sneakers"
+            />
+            <div class="product-overlay">
+              <button
+                class="add-to-cart-btn"
+                data-id="HRX Men Pro Sneakers || Rs.1699"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="joggers">
-        <img src="images/products-img/men/joggers1.png"
-          id="HRX Men Solid Joggers || Rs.934" alt onclick="add(this.id)" >
-        <img src="images/products-img/men/joggers1.png"
-          id="HRX Men Solid Joggers || Rs.934" alt onclick="add(this.id)" >
-        <img src="images/products-img/men/joggers1.png"
-          id="HRX Men Solid Joggers || Rs.934" alt onclick="add(this.id)">
-        <img src="images/products-img/men/joggers1.png"
-          id="HRX Men Solid Joggers || Rs.934" alt onclick="add(this.id)">
-      </div>
-      <div class="shoes">
-        <img src="images/products-img/men/shoe1.png"
-          id="PUMA Men Clasp IDP Sneakers || Rs.1304" alt
-          onclick="add(this.id)">
-        <img src="images/products-img/men/shoe2.png"
-          id="Levis Men Sneakers || Rs.1169" alt onclick="add(this.id)">
-        <img src="images/products-img/men/shoe3.png"
-          id="Mactree Men Sneakers || Rs.679" alt onclick="add(this.id)">
-        <img src="images/products-img/men/shoe4.png"
-          id="HRX Men Pro Sneakers || Rs.1699" alt onclick="add(this.id)">
-      </div><br>
 
-      <h4 class="sry-msg">Uh-Oh! We are<span class="colored-word">
-          done</span>🛒</h4>
-      <center><hr class="last-hr-of-product"></center>
-      <br><br>
-
+      <h4 class="sry-msg">
+        Uh-Oh! We are <span class="colored-word">done</span>🛒
+      </h4>
+      <hr class="last-hr-of-product" />
+      <br /><br />
     </div>
-    <div class="view2"
-        <button id="view-cart" class="btn-view-cart">View Cart</button>
-      <br><br><br>
-    </div>
-    
 
+    <div class="view2">
+      <button id="view-cart" class="btn-view-cart">View Cart</button>
+      <br /><br /><br />
+    </div>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var viewCartButton = document.getElementById('view-cart');
-        if (viewCartButton) {
-          viewCartButton.addEventListener('click', function() {
-            console.log('Button clicked');
-            window.location.href = 'cart.html';
+      document.addEventListener("DOMContentLoaded", function () {
+        var addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+        var cartItemsContainer = document.getElementById("cart-items");
+        var cartListContainer = document.getElementById("cart-list");
+        var cartTotalContainer = document.getElementById("cart-total");
+        var cartCountElement = document.getElementById("cart-count");
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function updateCartDisplay() {
+          cartListContainer.innerHTML = "";
+          let total = 0;
+
+          cart.forEach(function (item, index) {
+            var [name, price] = item.split(" || ");
+            var priceValue = parseFloat(price.replace("Rs.", ""));
+            total += priceValue;
+
+            var itemElement = document.createElement("div");
+            itemElement.className = "cart-item";
+            itemElement.innerHTML = `
+              <span>${name}</span>
+              <span>${price}</span>
+              <button onclick="removeFromCart(${index})">Remove</button>
+            `;
+            cartListContainer.appendChild(itemElement);
           });
-        } else {
-          console.error('View Cart button not found');
+
+          cartTotalContainer.textContent = `Total: Rs.${total.toFixed(2)}`;
+          cartCountElement.textContent = cart.length;
+          cartItemsContainer.style.display = cart.length > 0 ? "block" : "none";
         }
+
+        function addToCart(productId) {
+          cart.push(productId);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartDisplay();
+        }
+
+        window.removeFromCart = function (index) {
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartDisplay();
+        };
+
+        addToCartButtons.forEach(function (button) {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            var productId = this.getAttribute("data-id");
+            addToCart(productId);
+          });
+        });
+
+        updateCartDisplay();
       });
     </script>
+
     <script src="./js/cartcount.js"></script>
     <script src="./js/nav.js"></script>
     <script src="js/shopping-list.js"></script>

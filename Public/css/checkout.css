@@ -1,39 +1,58 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
 
+:root {
+  --primary-color: #5195a8;
+  --secondary-color: #70eaff;
+  --text-color: #262626;
+  --background-color: #f6f6f6;
+  --border-color: #dadada;
+  --button-color: #52ad9c;
+  --button-hover-color: #428a7d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: url("http://all4desktop.com/data_images/original/4236532-background-images.jpg");
+  background: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-image-4236532-background-images-Rl9Ue0Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.jpg");
+  background-size: cover;
+  background-attachment: fixed;
   font-family: "Roboto Condensed", sans-serif;
-  color: #262626;
-  margin: 5% 0;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 17vh;
+  max-width: 1040px;
+  padding-top: 35px;
+  margin: 5vh auto;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
   text-align: center;
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
+  margin-bottom: 20px;
+  color: var(--primary-color);
 }
 
 .d-flex {
   display: flex;
   flex-direction: row;
-  background: #f6f6f6;
-  border-radius: 0 0 5px 5px;
+  background: #fff;
+  border-radius: 5px;
   padding: 25px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 form {
-  flex: 4;
+  flex: 3;
+  margin-right: 25px;
 }
 
 .Yorder {
@@ -41,25 +60,14 @@ form {
 }
 
 .title {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    color-stop(0, #5195a8),
-    color-stop(100, #70eaff)
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
   );
-  background: -moz-linear-gradient(top left, #5195a8 0%, #70eaff 100%);
-  background: -ms-linear-gradient(top left, #5195a8 0%, #70eaff 100%);
-  background: -o-linear-gradient(top left, #5195a8 0%, #70eaff 100%);
-  background: linear-gradient(to bottom right, #5195a8 0%, #70eaff 100%);
   border-radius: 5px 5px 0 0;
   padding: 20px;
-  color: #f6f6f6;
-}
-
-h2 {
-  margin: 0;
-  padding-left: 15px;
+  color: #fff;
 }
 
 .required {
@@ -69,14 +77,13 @@ h2 {
 label,
 table {
   display: block;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 label > span {
-  float: left;
+  display: inline-block;
   width: 25%;
-  margin-top: 12px;
-  padding-right: 10px;
+  margin-bottom: 10px;
 }
 
 input[type="text"],
@@ -84,57 +91,52 @@ input[type="tel"],
 input[type="email"],
 select {
   width: 70%;
-  height: 30px;
+  height: 40px;
   padding: 5px 10px;
   margin-bottom: 10px;
-  border: 1px solid #dadada;
-  color: #888;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-color);
 }
 
 select {
   width: 72%;
-  height: 45px;
+  height: 40px;
   padding: 5px 10px;
   margin-bottom: 10px;
 }
 
 .Yorder {
   margin-top: 15px;
-  height: 600px;
   padding: 20px;
-  border: 1px solid #dadada;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
 }
 
 table {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th {
-  border-bottom: 1px solid #dadada;
-  padding: 10px 0;
+th,
+td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
 }
 
 tr > td:nth-child(1) {
   text-align: left;
-  color: #2d2d2a;
+  color: var(--text-color);
 }
 
 tr > td:nth-child(2) {
   text-align: right;
-  color: #52ad9c;
-}
-
-td {
-  border-bottom: 1px solid #dadada;
-  padding: 25px 25px 25px 0;
+  color: var(--button-color);
 }
 
 p {
-  display: block;
   color: #888;
-  margin: 0;
-  padding-left: 25px;
+  margin: 10px 0;
 }
 
 .Yorder > div {
@@ -143,17 +145,61 @@ p {
 
 button {
   width: 100%;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 20px;
+  padding: 12px;
   border: none;
   border-radius: 30px;
-  background: #52ad9c;
+  background: var(--button-color);
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  cursor: pointer;
-  background: #428a7d;
+  background: var(--button-hover-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+    margin-top: 10%;
+  }
+
+  .d-flex {
+    flex-direction: column;
+  }
+
+  form,
+  .Yorder {
+    flex: 1;
+    margin-right: 0;
+    margin-top: 10%;
+  }
+
+  label > span {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  select {
+    width: 100%;
+  }
+
+  .Yorder {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+    margin-top: 10%;
+  }
 }
