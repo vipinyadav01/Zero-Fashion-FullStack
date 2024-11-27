@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
   const clearCartButton = document.getElementById("clear-cart");
+  const checkoutButton = document.getElementById("checkout-button");
 
   function loadCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -43,6 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   clearCartButton.addEventListener("click", clearCart);
 
+  checkoutButton.addEventListener("click", () => {
+    //Remove the alert
+    // alert('Proceeding to checkout...');
+    // Redirect to the checkout page
+    window.location.href = "checkout.html"; // Replace with your actual checkout page URL
+  });
 
   cartItems.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-item")) {
