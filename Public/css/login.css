@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
   transition: 1s ease;
-=======
-/* author: Shayan 
-https://codepen.io/shayanea/pen/eVMMgO*/
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 html,
 body {
@@ -21,7 +17,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
->>>>>>> b0e5543b71240a8afd6ddcb7e045ed32c8948056
 }
 
 body {
