@@ -1,70 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cartItems = document.getElementById("cart-items");
-  const cartTotal = document.getElementById("cart-total");
-  const clearCartButton = document.getElementById("clear-cart");
-  const checkoutButton = document.getElementById("checkout-button");
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const clearCartButton = document.getElementById("clear-cart");
+    const checkoutButton = document.getElementById("checkout-button");
 
-  function loadCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    function loadCart() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    cartItems.innerHTML = "";
+        cartItems.innerHTML = "";
 
-    if (cart.length === 0) {
-      cartItems.innerHTML = "<p>Your cart is empty.</p>";
-      cartTotal.textContent = "₹0.00";
-      return;
+        if (cart.length === 0) {
+            cartItems.innerHTML = "<p>Your cart is empty.</p>";
+            cartTotal.textContent = "₹0.00";
+            return;
+        }
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const [name, price] = item.split("||");
+            const priceValue = parseFloat(price.replace("Rs.", "").trim());
+
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("cart-item");
+            itemElement.innerHTML = `
+          <h3>${name}</h3>
+          <p>Price: ${price}</p>
+          <button class="remove-item" data-index="${index}">Remove</button>
+        `;
+            cartItems.appendChild(itemElement);
+
+            total += priceValue;
+        });
+
+        cartTotal.textContent = `₹${total.toFixed(2)}`;
     }
 
-    let total = 0;
+    function clearCart() {
+        localStorage.removeItem("cart");
+        loadCart();
+    }
 
-    cart.forEach((item, index) => {
-      const [name, price] = item.split("||");
-      const priceValue = parseFloat(price.replace("Rs.", "").trim());
+    function removeItemFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+    }
 
-      const itemElement = document.createElement("div");
-      itemElement.classList.add("cart-item");
-      itemElement.innerHTML = `
-        <h3>${name}</h3>
-        <p>Price: ${price}</p>
-        <button class="remove-item" data-index="${index}">Remove</button>
-      `;
-      cartItems.appendChild(itemElement);
+    clearCartButton.addEventListener("click", clearCart);
 
-      total += priceValue;
+    cartItems.addEventListener("click", (e) => {
+        if (e.target.classList.contains("remove-item")) {
+            const index = parseInt(e.target.getAttribute("data-index"), 10);
+            removeItemFromCart(index);
+        }
     });
 
-    cartTotal.textContent = `₹${total.toFixed(2)}`;
-  }
-
-  function clearCart() {
-    localStorage.removeItem("cart");
     loadCart();
-  }
-
-  function removeItemFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
-  }
-
-<<<<<<< HEAD
-  checkoutButton.addEventListener("click", () => {
-    //Remove the alert
-    // alert('Proceeding to checkout...');
-    // Redirect to the checkout page
-    window.location.href = "checkout.html"; // Replace with your actual checkout page URL
-  });
-=======
-  clearCartButton.addEventListener("click", clearCart);
->>>>>>> b0e5543b71240a8afd6ddcb7e045ed32c8948056
-
-  cartItems.addEventListener("click", (e) => {
-    if (e.target.classList.contains("remove-item")) {
-      const index = parseInt(e.target.getAttribute("data-index"), 10);
-      removeItemFromCart(index);
-    }
-  });
-
-  loadCart();
 });

@@ -2,26 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta charset="UTF-8" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./images/Favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/Favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./images/Favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/nav.css" />
@@ -29,6 +9,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -49,7 +33,6 @@
 
         <li class="profile">
           <a href="profile-card.html">
-            <!-- <i class="fa-solid fa-bell"></i> -->
             <img src="./images/user.png" width="40" alt="profile" />
           </a>
         </li>
@@ -64,16 +47,14 @@
     <h1 class="headingCart">Shopping Cart</h1>
     <div id="cart-items"></div>
     <div id="cart-summary">
-      <p>Total:<span id="cart-total">0.00</span></p>
+      <p>Total: <span id="cart-total">₹0.00</span></p>
     </div>
-    <button id="clear-cart">Clear Cart</button>
-<<<<<<< HEAD
-    <button id="checkout-button">Proceed to Checkout</button>
-=======
-    <button id="checkout-button">
-      <a href="checkout.html"> Proceed to Checkout </a>
-    </button>
->>>>>>> b0e5543b71240a8afd6ddcb7e045ed32c8948056
+    <div class="cart-actions">
+      <button id="clear-cart">Clear Cart</button>
+      <button id="checkout-button">
+        <a href="checkout.html">Proceed to Checkout</a>
+      </button>
+    </div>
 
     <script src="js/cartcount.js"></script>
     <script src="js/nav.js"></script>
