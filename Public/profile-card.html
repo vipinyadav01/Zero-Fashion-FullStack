@@ -20,10 +20,10 @@
       sizes="16x16"
       href="./images/Favicon/favicon-16x16.png"
     />
-
     <link rel="manifest" href="./images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/profile-card.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
   </head>
@@ -47,40 +47,75 @@
       </div>
     </nav>
     <!-- navbar -->
-    <div class="profile-card">
-      <h2 class="full-name">Zero-Fashion</h2>
-      <p class="email">Zero-Fashion@example.com</p>
-      <div class="profile-image-container">
-        <img
-          src="/placeholder.svg?height=150&width=150"
-          alt="Profile Picture"
-          class="profile-image"
-        />
-      </div>
-      <div class="upload-btn-wrapper">
-        <button class="btn">Upload</button>
-        <input type="file" name="myfile" accept="image/*" id="fileInput" />
-        <button class="btn" id="logout-btn">Log Out</button>
+
+    <div class="container">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="cover-photo"></div>
+          <div class="profile-image-container">
+            <img
+              src="https://i.pravatar.cc/300"
+              alt="Profile Picture"
+              class="profile-image"
+            />
+            <div class="edit-overlay">
+              <span class="edit-icon">✏️</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-info">
+          <h2 class="full-name">Zero-Fashion</h2>
+          <p class="email">Zero-Fashion@example.com</p>
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-value">1.2K</span>
+              <span class="stat-label">Orders</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">847</span>
+              <span class="stat-label">Reviews</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">4.9</span>
+              <span class="stat-label">Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <div class="upload-btn-wrapper">
+            <button class="btn upload-btn">
+              <span class="btn-icon">📸</span>
+              Change Photo
+            </button>
+            <input type="file" name="myfile" accept="image/*" id="fileInput" />
+          </div>
+          <button class="btn logout-btn" id="logout-btn">
+            <span class="btn-icon">🚪</span>
+            Log Out
+          </button>
+        </div>
       </div>
     </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const profileImage = document.querySelector(".profile-image");
         const fileInput = document.getElementById("fileInput");
         const logoutBtn = document.getElementById("logout-btn");
-        const btn = document.querySelector(".btn");
+        const editOverlay = document.querySelector(".edit-overlay");
         const fullname = document.querySelector(".full-name");
-        const email =  document.querySelector(".email")
+        const email = document.querySelector(".email");
 
         let userInfo = localStorage.getItem("user-info");
         if(userInfo){
           userInfo = JSON.parse(userInfo);
           fullname.textContent = userInfo.name;
-          email.textContent = userInfo.email
+          email.textContent = userInfo.email;
         }
 
-
-        btn.addEventListener("click", () => {
+        editOverlay.addEventListener("click", () => {
           fileInput.click();
         });
 
@@ -90,13 +125,10 @@
         // Handle file upload
         fileInput.addEventListener("change", function (event) {
           const file = event.target.files[0];
-          console.log("sfsdfsf");
-
           if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
               profileImage.src = e.target.result;
-              // Save image to localStorage
               localStorage.setItem("profileImage", e.target.result);
             };
             reader.readAsDataURL(file);
@@ -114,13 +146,9 @@
         }
 
         function logout() {
-          // Clear the profile image from localStorage
           localStorage.removeItem("profileImage");
-          // Reset the profile image to default
-          profileImage.src = "/placeholder.svg?height=150&width=150";
-          // Clear other user data if needed
+          profileImage.src = "https://i.pravatar.cc/300";
           localStorage.removeItem("user-info");
-          // Redirect to login page
           window.location.href = "login.html";
         }
       });

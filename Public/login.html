@@ -2,63 +2,97 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./images/Favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/Favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./images/Favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login form</title>
+    <title>Login & Signup</title>
     <link rel="stylesheet" href="./css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <input type="radio" id="chk1" name="a1" style="display: none" />
-    <input type="radio" id="chk2" name="a1" style="display: none" />
-    <input type="radio" id="chk3" name="a1" style="display: none" />
-    <div class="box">
-      <div class="a">
-        <label for="chk3" id="sup"><h1>Welcome</h1> </label>
+    <div class="container">
+        <div class="form-control signin-form active">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="email"
+                  autocomplete="username"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="input-group">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                  autocomplete="current-password"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="switch-form">
+              Don't have an account? <a href="#" id="signup-link">Sign up</a>
+            </p>
+        </div>
 
-        <label for="chk1">Login</label>
-        <label for="chk2" id="sup">Sign up</label>
-      </div>
-      <div class="b">
-        <div class="frm">
-          <h6 class="title"></h6>
-          <input id="fullname" type="text" placeholder="Enter Full Name" />
-          <input id="sEmail" type="text" placeholder="Enter Email Address" />
-          <input type="email" placeholder="Enter Password" id="pass" />
-          <input id="cPass" type="text" placeholder="Confirm Password" />
-          <input type="button" class="signupBtn" value="Sign up" id="btn" />
-          <label for="chk1" id="btm">Login here</label>
+        <div class="form-control signup-form">
+            <h2>Create Account</h2>
+            <form id="signupForm">
+              <div class="input-group">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  id="fullname"
+                  autocomplete="name"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="sEmail"
+                  autocomplete="email"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="input-group">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="pass"
+                  autocomplete="new-password"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="input-group">
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  id="cPass"
+                  autocomplete="new-password"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <button type="submit" class="btn">Sign Up</button>
+            </form>
+            <p class="switch-form">
+              Already have an account? <a href="#" id="login-link">Login</a>
+            </p>
         </div>
-      </div>
-      <div class="c">
-        <div class="frm">
-          <br /><br /><br /><br /><br /><br /><br />
-          <h6 class="title"></h6>
-          <input id="email" type="email" placeholder="Username or Email" />
-          <input id="password" type="text" placeholder="Enter Password" />
-          <input type="button" class="loginBtn" value="Login" id="btn" />
-          <label for="chk2" id="btm">Signup here</label>
-        </div>
-      </div>
-      <div class="d"></div>
-      <div class="e"></div>
     </div>
+
     <script src="./js/login.js"></script>
   </body>
 </html>
