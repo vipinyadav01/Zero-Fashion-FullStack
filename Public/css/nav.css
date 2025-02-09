@@ -1,172 +1,225 @@
 :root {
-  --primary-color: #f84258;
-  --secondary-color: darkcyan;
-  --text-color: #333;
-  --background-color: #ffffff;
-  --header-height: 8vh;
-  --transition-speed: 0.4s;
-}
+    --primary-color: #f84258;
+    --secondary-color: darkcyan;
+    --text-color: #333;
+    --background-color: #ffffff;
+    --header-height: 8vh;
+    --transition-speed: 0.4s;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: var(--header-height);
-  background-color: var(--background-color);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1px;
-  transition: background-color var(--transition-speed),
-    box-shadow var(--transition-speed);
-}
+  /* Reset default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+  /* Remove all default link styling */
+  a {
+    text-decoration: none !important; /* Force remove underline */
+    color: inherit;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
 
-nav a {
-  padding: 10px;
-  font-size: 1.2rem;
-  line-height: 25px;
-  border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
-  transition: color var(--transition-speed);
-  font-weight: bold;
-}
-
-nav ul li a {
-  font-size: 0.87rem;
-}
-
-nav a:hover {
-  color: var(--primary-color);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.logo-icon {
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
-}
-
-.logo h3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
-}
-
-.logo-name {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5px;
-}
-
-.nav-links li {
-  margin-left: 20px;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  list-style: none;
-}
-
-.nav-links li a:hover {
-  color: var(--secondary-color);
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: color var(--transition-speed);
-}
-
-.burger div {
-  background-color: var(--primary-color);
-  width: 25px;
-  height: 3px;
-  margin: 5px;
-  transition: all var(--transition-speed) ease;
-}
-
-@media screen and (max-width: 599px) {
-  .nav-links {
-    position: fixed;
-    right: 0px;
-    height: calc(100vh - var(--header-height));
-    top: var(--header-height);
-    background-color: var(--background-color);
-    flex-direction: column;
+  nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform var(--transition-speed) ease-in-out;
+    height: var(--header-height);
+    background-color: var(--background-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed),
+                box-shadow var(--transition-speed);
   }
 
-  .nav-links li {
-    margin: 20px 0;
-    opacity: 0;
+  /* Logo styles */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
   }
 
-  .burger {
-    display: block;
-    margin-right: 20px;
-  }
-
-  .nav-active {
-    transform: translateX(0);
-    justify-content: flex-start;
-  }
-
-  .nav-links li {
-    opacity: 1;
-    margin-top: 20px;
-  }
-
-  .nav-links li.fade-in {
-    animation: navLinkFade 0.2s ease forwards;
-  }
-
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-    opacity: 0;
-  }
-
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+  .logo a,
+  .logo-name {
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 
   .logo h3 {
-    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
   }
-}
 
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
+  .logo-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--primary-color);
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+
+  /* Navigation links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
   }
-}
+
+  .nav-links li {
+    margin-left: 20px;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    list-style: none;
+  }
+
+  .nav-links li a {
+    font-size: 0.87rem;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    line-height: 25px;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    transition: color var(--transition-speed);
+  }
+
+  /* Hover effect - replace underline with color change */
+  .nav-links li a:hover {
+    color: var(--secondary-color);
+  }
+
+  /* Optional: Add custom hover effect instead of underline */
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--secondary-color);
+    transition: all var(--transition-speed) ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-links li a:hover::after {
+    width: calc(100% - 20px); /* Account for padding */
+  }
+
+  /* Burger menu */
+  .burger {
+    display: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .burger div {
+    background-color: var(--primary-color);
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    transition: all var(--transition-speed) ease;
+  }
+
+  /* Mobile navigation */
+  @media screen and (max-width: 599px) {
+    .nav-links {
+      position: fixed;
+      right: 0px;
+      height: calc(100vh - var(--header-height));
+      top: var(--header-height);
+      background-color: var(--background-color);
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform var(--transition-speed) ease-in-out;
+    }
+
+    .nav-links li {
+      margin: 20px 0;
+      opacity: 0;
+    }
+
+    .nav-links li a {
+      font-size: 1rem;
+      padding: 15px;
+    }
+
+    /* Remove hover underline effect on mobile */
+    .nav-links li a::after {
+      display: none;
+    }
+
+    .burger {
+      display: block;
+      margin-right: 20px;
+    }
+
+    .nav-active {
+      transform: translateX(0);
+      justify-content: flex-start;
+    }
+
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+      opacity: 0;
+    }
+
+    .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .logo h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Animation keyframes */
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Fix for Safari and iOS */
+  @supports (-webkit-touch-callout: none) {
+    a {
+      -webkit-text-decoration: none !important;
+      text-decoration: none !important;
+    }
+  }
+
+  /* Fix for Firefox */
+  @-moz-document url-prefix() {
+    .nav-links li a {
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
+  }
+
+  /* High contrast mode fixes */
+  @media (forced-colors: active) {
+    .nav-links li a {
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
+  }

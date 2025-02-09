@@ -296,18 +296,9 @@ p {
   .index-offers-img,
   .index-grid-img-1,
   .index-grid-img-2,
-  .index-grid-img-3 {
-    grid-template-columns: 1fr;
-  }
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-
-  .index-offers-img,
-  .index-grid-img-1,
-  .index-grid-img-2,
   .index-grid-img-3,
   .footer-container {
+    grid-template-columns: 1fr;
     padding: 10px 20px;
   }
 
