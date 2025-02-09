@@ -294,14 +294,16 @@
       const profileData = document.querySelector(".profile__data");
       function fetchUserDetails() {
         let data = localStorage.getItem("user-info");
-        if (!data) return;
+        if (!data || !profileData) return;
 
         try {
           data = JSON.parse(data);
-          profileData.innerHTML = `
+          if (profileData) {
+            profileData.innerHTML = `
       <p>Name: ${data.name}</p>
       <p>Email: ${data.email}</p>
     `;
+          }
 
           // Update profile image
           const profileImage = document.querySelector(".profile img");
