@@ -8,18 +8,15 @@
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
-  /* Reset default styles */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
-  /* Remove all default link styling */
   a {
-    text-decoration: none !important; /* Force remove underline */
+    text-decoration: none !important;
     color: inherit;
-    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
   }
 
   nav {
@@ -37,8 +34,6 @@
     transition: background-color var(--transition-speed),
                 box-shadow var(--transition-speed);
   }
-
-  /* Logo styles */
   .logo {
     display: flex;
     align-items: center;
@@ -141,14 +136,16 @@
       background-color: var(--background-color);
       flex-direction: column;
       align-items: center;
-      width: 50%;
+      width: 60%;
       transform: translateX(100%);
       transition: transform var(--transition-speed) ease-in-out;
     }
 
     .nav-links li {
-      margin: 20px 0;
+      margin: 15px 0;
       opacity: 0;
+      animation: navLinkFade var(--transition-speed) ease forwards;
+      animation-delay: calc(0.1s * var(--i));
     }
 
     .nav-links li a {
@@ -156,7 +153,6 @@
       padding: 15px;
     }
 
-    /* Remove hover underline effect on mobile */
     .nav-links li a::after {
       display: none;
     }
@@ -185,10 +181,11 @@
 
     .logo h3 {
       font-size: 1.2rem;
+      margin-left: 6px;
+      white-space: nowrap;
     }
   }
 
-  /* Animation keyframes */
   @keyframes navLinkFade {
     from {
       opacity: 0;
@@ -200,7 +197,6 @@
     }
   }
 
-  /* Fix for Safari and iOS */
   @supports (-webkit-touch-callout: none) {
     a {
       -webkit-text-decoration: none !important;
@@ -208,15 +204,12 @@
     }
   }
 
-  /* Fix for Firefox */
   @-moz-document url-prefix() {
     .nav-links li a {
       text-decoration: none !important;
       border-bottom: none !important;
     }
   }
-
-  /* High contrast mode fixes */
   @media (forced-colors: active) {
     .nav-links li a {
       text-decoration: none !important;
