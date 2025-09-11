@@ -1,356 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./images/Favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/Favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./images/Favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./images/Favicon/site.webmanifest" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Home</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nova+Cut|Nova+Script&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style_index.css" />
-    <link rel="stylesheet" href="css/Zero.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <img src="images/Favicon/favicon-32x32.png" alt="logo" />
-        <h3><a href="Zero.html" class="logo-name">ZERO FASHION</a></h3>
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="categories.html">Categories</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">ContactUs</a></li>
-        <li><a href="cart.html" id="cart">Cart</a></li>
-        <li class="profile">
-          <a href="profile-card.html">
-            <img src="./images/user.png" width="40" alt="profile" />
-          </a>
-        </li>
-      </ul>
-      <div class="burger" aria-label="Toggle navigation menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Ultimate Shopping Destination</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ShopHub</h2>
+            </div>
+            
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="nav-btn" id="loginBtn">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </button>
+                <button class="nav-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <div class="index-main-img">
-      <div class="slider">
-        <div class="image-box">
-          <div class="slide">
-            <img src="images/si/si1.jpg" alt="Slide 1" />
-          </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Amazing Products</h1>
+            <p>Shop the latest trends with unbeatable prices and fast delivery</p>
+            <button class="cta-btn" id="shopNowBtn">Shop Now</button>
         </div>
-      </div>
-    </div>
-    <br />
+        <div class="hero-image">
+            <img src="/placeholder.svg?height=400&width=600" alt="Shopping Hero">
+        </div>
+    </section>
 
-    <div class="index-offers-img">
-      <a href="categories.html"
-        ><img src="images/index-img/1.png" alt="Offer 1"
-      /></a>
-      <a href="categories.html"
-        ><img src="images/index-img/2.png" alt="Offer 2"
-      /></a>
-      <a href="categories.html"
-        ><img src="images/index-img/3.png" alt="Offer 3"
-      /></a>
-      <a href="categories.html"
-        ><img src="images/index-img/4.png" alt="Offer 4"
-      /></a>
-    </div>
-
-    <br /><br />
-
-    <div class="index-grid-img-1">
-      <div>
-        <a href="categories.html"
-          ><img
-            src="images/index-img/anton-levin-P8prss71psk-unsplash.jpg"
-            alt="For the Young, Wild & Stylish"
-        /></a>
-        <a href="categories.html"
-          ><h4 class="info-of-img-below">For the Young, Wild & Stylish</h4></a
-        >
-      </div>
-      <div>
-        <a href="categories.html"
-          ><img
-            src="images/index-img/bogdan-glisik-2WgOPYJuPsU-unsplash (1).jpg"
-            alt="Just like your way to Conquer"
-        /></a>
-        <a href="categories.html"
-          ><h4 class="info-of-img-below">Just like your way to Conquer</h4></a
-        >
-      </div>
-      <div>
-        <a href="categories.html"
-          ><img
-            src="images/index-img/fashion.png"
-            alt="Stands out like the Sun"
-        /></a>
-        <a href="categories.html"
-          ><h4 class="info-of-img-below">Stands out like the Sun</h4></a
-        >
-      </div>
-    </div>
-
-    <br />
-    <br />
-    <br />
-
-    <h2 class="head-of-offer">TRENDING NOW</h2>
-    <br />
-    <p class="para-of-offer">From the runway to your wardrobe</p>
-
-    <br /><br />
-
-    <div class="index-grid-img-2">
-      <div class="image-container">
-        <a href="products.html">
-          <img
-            src="images/index-img/31JFfUrAF2L.jpg"
-            id="trans-img"
-            alt="NIKE CASUAL"
-          />
-          <p
-            style="
-              font-size: 20px;
-              font-family: 'Futura', 'Arial Black', sans-serif;
-            "
-          >
-            NIKE CASUAL
-          </p>
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="products.html">
-          <img src="images/index-img/31kg9V3qvEL.jpg" alt="AIR JORDAN" />
-          <p
-            style="
-              font-size: 20px;
-              font-family: 'Futura', 'Arial Black', sans-serif;
-            "
-          >
-            AIR JORDAN
-          </p>
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="products.html">
-          <img src="images/index-img/21BlQhxNFKL.avif" alt="ADIDAS CASUAL" />
-          <p
-            style="
-              font-size: 20px;
-              font-family: ITC Avant Garde Gothic, sans-serif;
-            "
-          >
-            ADDIDAS CASUAL
-          </p>
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="products.html">
-          <img src="images/index-img/31f9SWCOYsL.jpg" alt="NIKE JORDAN" />
-          <p
-            style="
-              font-size: 20px;
-              font-family: 'Futura', 'Arial Black', sans-serif;
-            "
-          >
-            NIKE JORDAN
-          </p>
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="products.html">
-          <img src="images/index-img/31e9luBzWbL.png" alt="ADIDAS RUNNING" />
-          <p
-            style="
-              font-size: 20px;
-              font-family: ITC Avant Garde Gothic, sans-serif;
-            "
-          >
-            ADDIDAS RUNNING
-          </p>
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="products.html">
-          <img src="images/index-img/41q5natoglL.jpg" alt="NIKE AIR JORDAN 2" />
-          <p
-            style="
-              font-size: 20px;
-              font-family: 'Futura', 'Arial Black', sans-serif;
-            "
-          >
-            NIKE AIR JORDAN 2
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <h2 class="head-of-offer">STYLES TO STEAL</h2>
-    <br />
-    <p class="para-of-offer">Inspired by influencers</p>
-
-    <br /><br />
-
-    <div class="index-grid-img-3">
-      <a href="products.html"
-        ><img src="images/index-img/girl1.png" alt="Style 1"
-      /></a>
-      <a href="products.html"
-        ><img src="images/index-img/girl2.png" alt="Style 2"
-      /></a>
-      <a href="products.html"
-        ><img src="images/index-img/girl3.png" alt="Style 3"
-      /></a>
-      <a href="products.html"
-        ><img src="images/index-img/girl4.png" alt="Style 4"
-      /></a>
-    </div>
-
-    <!-- Modern Footer -->
-   <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-content">
-          
-          <!-- About -->
-          <div class="footer-column">
-            <h4>About Us</h4>
-            <p>We offer stylish, high-quality fashion for modern individuals. Simplicity, comfort, and elegance define our collection.</p>
-          </div>
-  
-          <!-- Quick Links -->
-          <div class="footer-column">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="categories.html">Shop</a></li>
-              <li><a href="products.html">New Arrivals</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-  
-          <!-- Support -->
-          <div class="footer-column">
-            <h4>Support</h4>
-            <ul class="footer-links">
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="shipping.html">Shipping Info</a></li>
-              <li><a href="refund-policy.html">Refund Policy</a></li>
-            </ul>
-          </div>
-  
-          <!-- Follow Us -->
-          <div class="footer-column">
-            <h4>Follow Us</h4>
-            <p>Stay updated with our latest styles.</p>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid" id="categoryGrid">
+                <!-- Categories will be loaded dynamically -->
             </div>
-          </div>
-  
         </div>
-  
-        <!-- Bottom Bar -->
-        <div class="footer-bottom">
-          <p>&copy; <span id="year">2024</span> Zero Fashion. 
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Service</a> | 
-            <a href="contact.html">Contact</a>
+    </section>
 
-          </p>
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Featured products will be loaded dynamically -->
+            </div>
         </div>
-      </div>
-    </footer>
+    </section>
 
-    <!-- FOOTER -->
-    <script src="js/nav.js"></script>
-    <script src="js/cartcount.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="js/login.js"></script>
-    <script>
-      // Profile functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const profile = document.querySelector(".profile");
-        
-        function fetchUserDetails() {
-          let data = localStorage.getItem("user-info");
-          if (!data) return;
+    <!-- All Products -->
+    <section class="all-products">
+        <div class="container">
+            <div class="products-header">
+                <h2>All Products</h2>
+                <div class="filters">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="createdAt">Newest</option>
+                        <option value="price">Price: Low to High</option>
+                        <option value="-price">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="allProducts">
+                <!-- All products will be loaded dynamically -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
 
-          try {
-            data = JSON.parse(data);
-            
-            // Update profile image
-            const profileImage = document.querySelector(".profile img");
-            if (profileImage && data.imagePath) {
-              profileImage.src = data.imagePath;
-            }
-            
-            // Update profile tooltip or other UI elements if needed
-            if (profile && data.name) {
-              profile.setAttribute('title', `Welcome, ${data.name}`);
-            }
-          } catch (error) {
-            console.error("Error parsing user data:", error);
-          }
-        }
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="product-details" id="productDetails">
+                <!-- Product details will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
 
-        fetchUserDetails();
-        
-        // Profile click handler - redirect to profile page
-        if (profile) {
-          profile.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.href = 'profile-card.html';
-          });
-        }
-      });
-    </script>
-  </body>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+                
+                <form id="loginForm" class="auth-form active">
+                    <h3>Welcome Back</h3>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                
+                <form id="registerForm" class="auth-form">
+                    <h3>Create Account</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/app.js"></script>
+</body>
 </html>

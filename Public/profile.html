@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ShopHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><h2>ShopHub</h2></a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <button class="nav-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="nav-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <!-- Sidebar -->
+        <div class="profile-sidebar">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 id="userName">Loading...</h3>
+                <p id="userEmail">Loading...</p>
+            </div>
+            
+            <nav class="profile-nav">
+                <a href="#profile" class="profile-nav-item active" data-section="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile Information</span>
+                </a>
+                <a href="#orders" class="profile-nav-item" data-section="orders">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>My Orders</span>
+                </a>
+                <a href="#addresses" class="profile-nav-item" data-section="addresses">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Addresses</span>
+                </a>
+                <a href="#security" class="profile-nav-item" data-section="security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Security</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="profile-main">
+            <!-- Profile Information Section -->
+            <section id="profile-section" class="profile-section active">
+                <div class="section-header">
+                    <h2>Profile Information</h2>
+                    <button class="btn-primary" id="editProfileBtn">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                </div>
+                
+                <div class="profile-card">
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="name" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" disabled>
+                        </div>
+                        
+                        <div class="form-actions" id="profileActions" style="display: none;">
+                            <button type="button" class="btn-secondary" id="cancelEditBtn">Cancel</button>
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders-section" class="profile-section">
+                <div class="section-header">
+                    <h2>My Orders</h2>
+                    <div class="order-filters">
+                        <select id="orderFilter">
+                            <option value="">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="orders-list" id="ordersList">
+                    <!-- Orders will be loaded here -->
+                </div>
+                
+                <div class="pagination" id="ordersPagination">
+                    <!-- Pagination will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Addresses Section -->
+            <section id="addresses-section" class="profile-section">
+                <div class="section-header">
+                    <h2>Shipping Addresses</h2>
+                    <button class="btn-primary" id="addAddressBtn">
+                        <i class="fas fa-plus"></i>
+                        Add Address
+                    </button>
+                </div>
+                
+                <div class="addresses-grid" id="addressesGrid">
+                    <!-- Addresses will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section id="security-section" class="profile-section">
+                <div class="section-header">
+                    <h2>Security Settings</h2>
+                </div>
+                
+                <div class="security-cards">
+                    <div class="profile-card">
+                        <h3>Change Password</h3>
+                        <form id="passwordForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" name="currentPassword" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" name="newPassword" required minlength="6">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                    
+                    <div class="profile-card">
+                        <h3>Account Security</h3>
+                        <div class="security-info">
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h4>Account Status</h4>
+                                    <p>Your account is secure and verified</p>
+                                </div>
+                            </div>
+                            
+                            <div class="security-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Last Login</h4>
+                                    <p id="lastLogin">Loading...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="security-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <h4>Member Since</h4>
+                                    <p id="memberSince">Loading...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Address Modal -->
+    <div class="modal" id="addressModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="addressModalTitle">Add Address</h3>
+                <span class="close" id="closeAddressModal">&times;</span>
+            </div>
+            <form id="addressForm" class="modal-form">
+                <div class="form-group">
+                    <label for="addressLabel">Address Label</label>
+                    <input type="text" id="addressLabel" name="label" placeholder="e.g., Home, Work" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="addressStreet">Street Address</label>
+                    <input type="text" id="addressStreet" name="street" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="addressCity">City</label>
+                        <input type="text" id="addressCity" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressState">State</label>
+                        <input type="text" id="addressState" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressZip">ZIP Code</label>
+                        <input type="text" id="addressZip" name="zipCode" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="addressCountry">Country</label>
+                    <select id="addressCountry" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="IN">India</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="IT">Italy</option>
+                        <option value="ES">Spain</option>
+                        <option value="JP">Japan</option>
+                        <option value="CN">China</option>
+                        <option value="BR">Brazil</option>
+                        <option value="MX">Mexico</option>
+                        <option value="RU">Russia</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="SG">Singapore</option>
+                        <option value="AE">United Arab Emirates</option>
+                        <option value="SA">Saudi Arabia</option>
+                        <option value="PK">Pakistan</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="LK">Sri Lanka</option>
+                        <option value="NP">Nepal</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="MV">Maldives</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="defaultAddress" name="isDefault">
+                        Set as default address
+                    </label>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancelAddressBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Address</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Order Details</h3>
+                <span class="close" id="closeOrderDetailsModal">&times;</span>
+            </div>
+            <div id="orderDetailsContent">
+                <!-- Order details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>
