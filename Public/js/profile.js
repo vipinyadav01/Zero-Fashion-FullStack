@@ -326,7 +326,7 @@ function displayUserOrders(orders) {
                 </div>
                 <div class="order-status">
                     <span class="status-badge ${order.status}">${order.status}</span>
-                    <span class="order-total">$${(order.totalAmount || 0).toFixed(2)}</span>
+                    <span class="order-total">₹${(order.totalAmount || 0).toFixed(2)}</span>
                 </div>
             </div>
             
@@ -338,7 +338,7 @@ function displayUserOrders(orders) {
                         <img src="${item.product?.image || '/placeholder.svg?height=50&width=50'}" alt="${item.product?.name || 'Item'}">
                         <div class="order-item-info">
                             <div class="order-item-name">${item.product?.name || 'Item'}</div>
-                            <div class="order-item-details">Qty: ${item.quantity} • $${item.price}</div>
+                            <div class="order-item-details">Qty: ${item.quantity} • ₹${item.price}</div>
                         </div>
                     </div>
                 `,
@@ -398,9 +398,9 @@ function viewOrderDetails(orderId) {
                         <img src="${item.product?.image || '/placeholder.svg?height=50&width=50'}" alt="${item.product?.name || 'Item'}">
                         <div class="item-info">
                             <div class="item-name">${item.product?.name || 'Item'}</div>
-                            <div class="item-details">Quantity: ${item.quantity} • Price: $${item.price}</div>
+                            <div class="item-details">Quantity: ${item.quantity} • Price: ₹${item.price}</div>
                         </div>
-                        <div class="item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+                        <div class="item-total">₹${(item.price * item.quantity).toFixed(2)}</div>
                     </div>
                 `,
                   )
@@ -411,15 +411,15 @@ function viewOrderDetails(orderId) {
                 <div class="order-summary">
                     <div class="summary-row">
                         <span>Subtotal:</span>
-                        <span>$${(order.totalAmount || 0).toFixed(2)}</span>
+                        <span>₹${(order.totalAmount || 0).toFixed(2)}</span>
                     </div>
                     <div class="summary-row">
                         <span>Shipping:</span>
-                        <span>$9.99</span>
+                        <span>₹9.99</span>
                     </div>
                     <div class="summary-row total">
                         <span>Total:</span>
-                        <span>$${((order.totalAmount || 0) + 9.99).toFixed(2)}</span>
+                        <span>₹${((order.totalAmount || 0) + 9.99).toFixed(2)}</span>
                     </div>
                 </div>
             </div>

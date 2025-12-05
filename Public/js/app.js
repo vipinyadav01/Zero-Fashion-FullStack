@@ -255,7 +255,7 @@ function displayProducts(products, container) {
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
-                <p class="product-price">$${product.price}</p>
+                <p class="product-price">₹${product.price}</p>
                 <p class="product-description">${product.description}</p>
                 <button class="add-to-cart" onclick="event.stopPropagation(); addToCart('${product._id}')">
                     Add to Cart
@@ -354,7 +354,7 @@ async function showProductDetails(productId) {
                 </div>
                 <div class="product-detail-info">
                     <h2>${product.name}</h2>
-                    <p class="product-detail-price">$${product.price}</p>
+                    <p class="product-detail-price">₹${product.price}</p>
                     <div class="product-rating">
                         <span>⭐ ${product.ratings.average} (${product.ratings.count} reviews)</span>
                     </div>
@@ -453,7 +453,7 @@ async function displayCartItems() {
                 <img src="${product.image}" alt="${product.name}">
                 <div class="cart-item-info">
                     <div class="cart-item-name">${product.name}</div>
-                    <div class="cart-item-price">$${product.price}</div>
+                    <div class="cart-item-price">₹${product.price}</div>
                     <div class="quantity-controls">
                         <button class="quantity-btn" onclick="updateQuantity('${item.productId}', ${item.quantity - 1})">-</button>
                         <span>${item.quantity}</span>

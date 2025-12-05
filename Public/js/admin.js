@@ -196,7 +196,7 @@ async function loadDashboardData() {
       apiCall("/products?limit=1"),
     ])
 
-    elements.totalRevenue.textContent = `$${(orderStats.totalRevenue || 0).toLocaleString()}`
+    elements.totalRevenue.textContent = `₹${(orderStats.totalRevenue || 0).toLocaleString()}`
     elements.totalOrders.textContent = (orderStats.totalOrders || 0).toLocaleString()
     elements.totalProducts.textContent = (productsPage.total || 0).toLocaleString()
     elements.totalUsers.textContent = (userStats.totalUsers || 0).toLocaleString()
@@ -222,7 +222,7 @@ async function loadRecentOrders() {
                 <strong>${order._id}</strong>
                 <span>${order.user?.name || "Customer"}</span>
             </div>
-            <div class="order-amount">$${(order.totalAmount || 0).toFixed(2)}</div>
+            <div class="order-amount">₹${(order.totalAmount || 0).toFixed(2)}</div>
             <span class="status-badge ${order.status}">${order.status}</span>
         </div>
     `,
@@ -274,7 +274,7 @@ function displayProducts(products) {
             <td><img src="${product.image}" alt="${product.name}"></td>
             <td>${product.name}</td>
             <td>${product.category}</td>
-            <td>$${product.price}</td>
+            <td>₹${product.price}</td>
             <td>${product.stock}</td>
             <td>
                 <span class="status-badge ${product.stock > 0 ? "active" : "inactive"}">
@@ -406,7 +406,7 @@ function displayOrders(orders) {
             <td>${order._id}</td>
             <td>${order.user?.name || "Customer"}</td>
             <td>${new Date(order.createdAt).toLocaleDateString()}</td>
-            <td>$${(order.totalAmount || 0).toFixed(2)}</td>
+            <td>₹${(order.totalAmount || 0).toFixed(2)}</td>
             <td><span class="status-badge ${order.status}">${order.status}</span></td>
             <td>
                 <button class="action-btn view" onclick="viewOrder('${order._id}')">
@@ -450,13 +450,13 @@ async function viewOrder(orderId) {
                     <div class="order-item-row">
                         <span>${item.product?.name || "Item"}</span>
                         <span>Qty: ${item.quantity}</span>
-                        <span>$${item.price}</span>
+                        <span>₹${item.price}</span>
                     </div>
                 `,
                   )
                   .join("")}
                 <div class="order-total">
-                    <strong>Total: $${(order.totalAmount || 0).toFixed(2)}</strong>
+                    <strong>Total: ₹${(order.totalAmount || 0).toFixed(2)}</strong>
                 </div>
             </div>
         </div>

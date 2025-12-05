@@ -133,7 +133,7 @@ async function loadOrderSummary() {
                     <div class="order-item-name">${product.name}</div>
                     <div class="order-item-details">Qty: ${item.quantity}</div>
                 </div>
-                <div class="order-item-price">$${itemTotal.toFixed(2)}</div>
+                <div class="order-item-price">₹${itemTotal.toFixed(2)}</div>
             </div>
         `
   }
@@ -144,10 +144,10 @@ async function loadOrderSummary() {
   const tax = subtotal * taxRate
   const total = subtotal + shippingCost + tax
 
-  elements.subtotal.textContent = `$${subtotal.toFixed(2)}`
-  elements.shipping.textContent = `$${shippingCost.toFixed(2)}`
-  elements.tax.textContent = `$${tax.toFixed(2)}`
-  elements.finalTotal.textContent = `$${total.toFixed(2)}`
+  elements.subtotal.textContent = `₹${subtotal.toFixed(2)}`
+  elements.shipping.textContent = `₹${shippingCost.toFixed(2)}`
+  elements.tax.textContent = `₹${tax.toFixed(2)}`
+  elements.finalTotal.textContent = `₹${total.toFixed(2)}`
 
   orderTotal = total
 }
